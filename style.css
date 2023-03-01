@@ -6,22 +6,43 @@ body {
     margin: 0;
 }
 
-.text
-{
+.text {
     font-family: "JetBrains Mono";
 }
 
-.nav-text
-{
+.nav-text {
     color: rgb(228, 228, 115);
     font-size: 30px;
 }
 
-.nav{
+.nav {
     display: flex;
     align-items: center;
     justify-content: center;
 
     height: 80px;
     background-color: rgb(45, 45, 45);
+}
+
+.cont-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.spawn-btn {
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 300px);
+
+    margin: 50px;
+}
+
+.photo {
+    width: 100%;
 }

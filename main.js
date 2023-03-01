@@ -48,5 +48,11 @@ const showImagesBtn = document.getElementById('show-images-btn');
 
 function addImageToContainer()
 {
-    
+    let div = document.getElementById("images-container");
+	let str_images = "";
+	for(let i = 0; i < 4; i++)
+	{
+		str_images += "<div><img src="+images[i].src+" class='photo'></div>";
+	}
+	div.innerHTML = str_images;
 }
