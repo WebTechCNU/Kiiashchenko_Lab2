@@ -52,7 +52,7 @@ function addImageToContainer()
 	let str_images = "";
 	for(let i = 0; i < 4; i++)
 	{
-		str_images += "<div><img src="+images[i].src+" class='photo'></div>";
+		str_images += "<div class='node'><img src="+images[i].src+" class='photo'></div>";
 	}
 	div.innerHTML = str_images;
 }
