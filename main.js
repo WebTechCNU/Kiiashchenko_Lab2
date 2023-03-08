@@ -3,7 +3,7 @@ const images = [
 	{
 		src: './Photos/evolve-cyberpart-gold-h-evcp-ghr410n305-16s480h1tbk-black.png',
 		alt: 'Товар 1',
-		description: 'Тепла кофта чоловіча, базова'
+		description: 'Процесор: Intel Core i5-11400F (2.6–4.4 ГГц), 6 ядер\nМатеринська плата: Asus Prime H510\nВідеокарта: RTX 3060, 12 ГБ\nВнутрішній накопичувач: 500 ГБ (SSD) + 1000 ГБ (HDD)\nВнутрішній накопичувач: Накопичувач PCI-E з підтримкою NVMe\nОперативна память: 16 ГБ, 3200 МГц (DDR4)\nБлок живлення: Chieftec Proton 600 Вт\nСертифікат блока живлення: Bronze'
 	},
 
 	{
@@ -46,13 +46,40 @@ const images = [
 const imagesContainer = document.getElementById('images-container');
 const showImagesBtn = document.getElementById('show-images-btn');
 
+let item_limit = 2;
+
 function addImageToContainer()
 {
+	// document.querySelector("#arrow").remove();
     let div = document.getElementById("images-container");
 	let str_images = "";
-	for(let i = 0; i < 4; i++)
+
+	for(let i = 0; i < 2; i++)
 	{
-		str_images += "<div class='node'><img src="+images[i].src+" class='photo'></div>";
+		str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><p class='price'>300 UAH</p></div>`;
 	}
-	div.innerHTML = str_images;
+
+	let arrow = "<div id='arrow' class='node'><img src='./pngtree-vector-right-arrow-icon-png-image_956430.jpg'></div>"
+	
+	div.innerHTML = str_images + arrow;
+
+	//item_limit += 2;
 }
+
+let modal = document.getElementById("modal");
+let span = document.getElementsByClassName("close")[0];
+
+
+setTimeout(function(){
+	modal.style.display = "block";
+
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+		if (event.target == modal) {
+		  modal.style.display = "none";
+		}
+	}
+}, 10000)
