@@ -51,11 +51,29 @@ body {
 }
 
 .node {
-    /* position: static; */
+    opacity: 1;
     height: 340px;
     width: 300px;
     border: solid 2px;
     border-color: black;
+}
+
+.node:nth-last-child(3),
+.node:nth-last-child(2),
+.node:nth-last-child(1) {
+
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .photo {
@@ -149,4 +167,9 @@ body {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.arrow {
+    height: 340px;
+    width: 300px;
 }
