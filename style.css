@@ -162,8 +162,13 @@ body {
     font-size: 28px;
 }
 
-.close:hover,
-.close:focus {
+.close-hover {
+    font-family: 'JetBrains Mono';
+    font-size: 28px;
+}
+
+.close-hover:hover,
+.close-hover:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;

@@ -44,17 +44,22 @@ const images = [
   },
 ];
 
+// NODES
+
 const imagesContainer = document.getElementById("images-container");
 const showImagesBtn = document.getElementById("show-images-btn");
 
-let item_limit = 4;
+let item_limit = 2;
 
 function addImageToContainer() {
-  document.querySelector("#arrow").remove();
+  if (item_limit != 2) {
+    document.querySelector("#arrow").remove();
+  }
+
   let div = document.getElementById("images-container");
   let str_images = "";
 
-  for (let i = 2; i < item_limit; i++) {
+  for (let i = 0; i < item_limit; i++) {
     str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><p class='price'>300 UAH</p></div>`;
   }
 
@@ -66,31 +71,62 @@ function addImageToContainer() {
   item_limit += 2;
 }
 
+// AD
+
 let modal = document.getElementById("modal");
 let span = document.getElementsByClassName("close")[0];
+let timer = document.getElementById("timer");
+let count = 5;
+
+// function ad_timer() {
+//   count--;
+
+//   if (count >= 0) {
+//     timer.innerHTML = "Зачекайте " + count + " секунд, щоб закрити рекламу";
+//   } else {
+//     ///clearInterval(interval);
+//     timer.innerHTML = "Ви можете закрити рекламу";
+
+//     span.classList.add("close-hover");
+//     span.onclick = function () {
+//       modal.style.display = "none";
+//     };
+
+//     window.onclick = function (event) {
+//       if (event.target == modal) {
+//         modal.style.display = "none";
+//       }
+//     };
+//   }
+// }
 
 setTimeout(function () {
   modal.style.display = "block";
+  const interval = setInterval(function () {
+    count--;
 
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
+    if (count >= 0) {
+      timer.innerHTML = "Зачекайте " + count + " секунд, щоб закрити рекламу";
+    } else {
+      ///clearInterval(interval);
+      timer.innerHTML = "Ви можете закрити рекламу";
 
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+      span.classList.add("close-hover");
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
     }
-  };
+  }, 1000);
 }, 10000);
 
-let div = document.getElementById("images-container");
-let str_images = "";
+// TODO filter  timer-for-add  subscribe
+// FIXME timer on start?
+// START
 
-for (let i = 0; i < 2; i++) {
-  str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><p class='price'>300 UAH</p></div>`;
-}
-
-let arrow =
-  "<div id='arrow' class='node'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='addImageToContainer()'></div>";
-
-div.innerHTML = str_images + arrow;
+addImageToContainer();
