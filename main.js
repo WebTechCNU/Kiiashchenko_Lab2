@@ -78,30 +78,9 @@ let span = document.getElementsByClassName("close")[0];
 let timer = document.getElementById("timer");
 let count = 5;
 
-// function ad_timer() {
-//   count--;
-
-//   if (count >= 0) {
-//     timer.innerHTML = "Зачекайте " + count + " секунд, щоб закрити рекламу";
-//   } else {
-//     ///clearInterval(interval);
-//     timer.innerHTML = "Ви можете закрити рекламу";
-
-//     span.classList.add("close-hover");
-//     span.onclick = function () {
-//       modal.style.display = "none";
-//     };
-
-//     window.onclick = function (event) {
-//       if (event.target == modal) {
-//         modal.style.display = "none";
-//       }
-//     };
-//   }
-// }
-
 setTimeout(function () {
   modal.style.display = "block";
+  // let interval = setInterval(ad_timer(), 1000);
   const interval = setInterval(function () {
     count--;
 
@@ -124,6 +103,28 @@ setTimeout(function () {
     }
   }, 1000);
 }, 10000);
+
+// function ad_timer() {
+//   count--;
+
+//   if (count >= 0) {
+//     timer.innerHTML = "Зачекайте " + count + " секунд, щоб закрити рекламу";
+//   } else {
+//     ///clearInterval(interval);
+//     timer.innerHTML = "Ви можете закрити рекламу";
+
+//     span.classList.add("close-hover");
+//     span.onclick = function () {
+//       modal.style.display = "none";
+//     };
+
+//     window.onclick = function (event) {
+//       if (event.target == modal) {
+//         modal.style.display = "none";
+//       }
+//     };
+//   }
+// }
 
 // TODO filter  timer-for-add  subscribe
 // FIXME timer on start?
