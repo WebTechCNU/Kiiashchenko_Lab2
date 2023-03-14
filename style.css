@@ -24,10 +24,10 @@ body {
     background-color: rgb(45, 45, 45);
 }
 
-.cont-btn{
+.cont-btn {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .spawn-btn {
@@ -38,6 +38,7 @@ body {
     background-color: rgb(228, 228, 115);
 
     font-family: 'JetBrains Mono';
+    font-size: 20px;
 }
 
 .container {
@@ -49,15 +50,126 @@ body {
     margin: 50px;
 }
 
-.node{
-    height: 300px;
+.node {
+    opacity: 1;
+    height: 340px;
     width: 300px;
+    border: solid 2px;
+    border-color: black;
+}
+
+.node:nth-last-child(3),
+.node:nth-last-child(2),
+.node:nth-last-child(1) {
+
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .photo {
-    height: 300px;
-    width: 300px;
+    display: block;
+    opacity: 1;
+    transition: .5s ease;
 
-    border: solid 1px;
-    border-color: black;
+    height: 295px;
+    width: 297px;
+}
+
+.text-on-photo {
+    transition: .5s ease;
+    opacity: 0;
+
+    margin-top: -295px;
+
+    font-family: 'JetBrains Mono';
+    font-size: 14px;
+}
+
+.price {
+    position: sticky;
+    top: 100%;
+
+    width: 70px;
+
+    margin-left: 20px;
+
+    border: solid 2px;
+    border-radius: 5px;
+    border-color: #000;
+
+    background-color: aquamarine;
+
+    text-align: center;
+    font-family: 'JetBrains Mono';
+    font-size: 14px;
+}
+
+.node:hover .photo {
+    opacity: 0.3;
+    filter: blur(2px);
+}
+
+.node:hover .text-on-photo {
+    opacity: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-cont {
+    background-color: rgb(228, 228, 115);
+
+    margin: auto;
+    padding: 20px;
+
+    border: 1px solid #888;
+
+    width: 80%;
+
+    font-family: 'JetBrains Mono';
+}
+
+.close {
+    color: rgba(0, 0, 0, 0.5);
+    float: right;
+    margin-top: -20px;
+    margin-right: -10px;
+
+    font-family: 'JetBrains Mono';
+    font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.arrow {
+    height: 340px;
+    width: 300px;
 }
