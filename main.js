@@ -10,19 +10,19 @@ const images = [
   {
     src: "./Photos/evolve-optipart-silver-3h-evop-s3hi114fn306-32s500h1tbk-black.png",
     alt: "Товар 2",
-    description: "Опис зображення 2",
+    description: "AMD",
   },
 
   {
     src: "./Photos/evolve-starterpart-bronze-b-evsp-bbr560g-16s500hbk-black.png",
     alt: "Товар 3",
-    description: "Опис зображення 3",
+    description: "Intel",
   },
 
   {
     src: "./Photos/t-computer-gaming-gtx1660s-base-tcgb-10100n1660s-16s480bk-black.png",
     alt: "Товар 4",
-    description: "Опис зображення 4",
+    description: "AMD",
   },
 
   {
@@ -64,7 +64,7 @@ function addImageToContainer() {
   }
 
   let arrow =
-    "<div id='arrow' class='node'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='addImageToContainer()'></div>";
+    "<div id='arrow' class='node'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='addImageToContainer()'><div style='display: none'>AMD Intel</div></div>";
 
   div.innerHTML += str_images + arrow;
 
@@ -72,12 +72,6 @@ function addImageToContainer() {
 }
 
 // AD
-
-// let modal = document.getElementById("modal");
-// let span = document.getElementById("close");
-// let timer = document.getElementById("timer");
-// let count = 5;
-
 setTimeout(function () {
   let modal = document.getElementById("modal");
   let span = document.getElementById("close");
@@ -85,7 +79,6 @@ setTimeout(function () {
   let count = 5;
 
   modal.style.display = "block";
-  // let interval = setInterval(ad_timer(), 1000);
   const interval = setInterval(function () {
     count--;
 
@@ -107,7 +100,7 @@ setTimeout(function () {
       };
     }
   }, 1000);
-}, 10000);
+}, 9000000);
 
 // SUBSCRIBE
 setTimeout(function () {
@@ -125,7 +118,7 @@ setTimeout(function () {
 
   //SUB
   sub_span.onclick = function () {
-    //localStorage.setItem("subscribed", "true");
+    localStorage.setItem("subscribed", "true");
     modal.style.display = "none";
     alert("Дякуємо за підписку!");
   };
@@ -144,24 +137,27 @@ setTimeout(function () {
   };
 }, 5000);
 
-// setTimeout(function () {
-//   if (localStorage.getItem("subscribed") !== "true") {
-//     var subscribeModal = new bootstrap.Modal(
-//       document.getElementById("subscribeModal")
-//     );
-//     subscribeModal.show();
-//     document
-//       .getElementById("subscribeButton")
-//       .addEventListener("click", function () {
-//         localStorage.setItem("subscribed", "true");
-//         subscribeModal.hide();
-//         alert("Дякуємо за підписку!");
-//       });
-//   }
-// }, 10000);
-
 // TODO filter subscribe
-// FIXME timer on start?
 // START
 
 addImageToContainer();
+
+//FIlTER
+function Filter(option) {
+  const nodes = document.querySelectorAll(".node");
+
+  nodes.forEach((element) => {
+    const text = element.textContent;
+
+    if (!text.includes(option)) {
+      if (element.classList.contains("view")) {
+        element.classList.remove("view");
+      }
+      element.classList.add("hide");
+      return;
+    }
+
+    element.classList.remove("hide");
+    element.classList.add("view");
+  });
+}
