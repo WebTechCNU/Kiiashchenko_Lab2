@@ -145,11 +145,37 @@ body {
     margin: auto;
     padding: 20px;
 
-    border: 1px solid #888;
+    border: 1px solid #000000;
 
     width: 80%;
 
     font-family: 'JetBrains Mono';
+}
+
+.subcribe-cont {
+    background-color: rgb(115, 115, 115);
+
+    margin: auto;
+    padding: 30px;
+    width: 300px;
+
+    border: 1px solid #000000;
+
+    font-family: 'JetBrains Mono';
+}
+
+.reject-span {
+    float: right;
+}
+
+.close-sub {
+    color: rgba(0, 0, 0, 0.5);
+    float: right;
+    margin-top: -40px;
+    margin-right: -115px;
+
+    font-family: 'JetBrains Mono';
+    font-size: 28px;
 }
 
 .close {

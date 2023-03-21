@@ -59,7 +59,7 @@ function addImageToContainer() {
   let div = document.getElementById("images-container");
   let str_images = "";
 
-  for (let i = 0; i < item_limit; i++) {
+  for (let i = item_limit - 2; i < item_limit; i++) {
     str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><p class='price'>300 UAH</p></div>`;
   }
 
@@ -73,12 +73,17 @@ function addImageToContainer() {
 
 // AD
 
-let modal = document.getElementById("modal");
-let span = document.getElementsByClassName("close")[0];
-let timer = document.getElementById("timer");
-let count = 5;
+// let modal = document.getElementById("modal");
+// let span = document.getElementById("close");
+// let timer = document.getElementById("timer");
+// let count = 5;
 
 setTimeout(function () {
+  let modal = document.getElementById("modal");
+  let span = document.getElementById("close");
+  let timer = document.getElementById("timer");
+  let count = 5;
+
   modal.style.display = "block";
   // let interval = setInterval(ad_timer(), 1000);
   const interval = setInterval(function () {
@@ -104,29 +109,63 @@ setTimeout(function () {
   }, 1000);
 }, 10000);
 
-// function ad_timer() {
-//   count--;
+// SUBSCRIBE
 
-//   if (count >= 0) {
-//     timer.innerHTML = "Зачекайте " + count + " секунд, щоб закрити рекламу";
-//   } else {
-//     ///clearInterval(interval);
-//     timer.innerHTML = "Ви можете закрити рекламу";
+// modal = document.getElementById("subcribe");
+// span = document.getElementById("close-sub");
+// let sub_span = document.getElementById("sub-span");
 
-//     span.classList.add("close-hover");
-//     span.onclick = function () {
-//       modal.style.display = "none";
-//     };
+setTimeout(function () {
+  let modal = document.getElementById("subcribe");
+  let span = document.getElementById("close-sub");
+  let sub_span = document.getElementById("sub-span");
+  let reject_span = document.getElementById("reject-span");
 
-//     window.onclick = function (event) {
-//       if (event.target == modal) {
-//         modal.style.display = "none";
-//       }
-//     };
+  if (localStorage.getItem("subscribed") === "true") {
+    return;
+  }
+
+  modal.style.display = "block";
+  span.classList.add("close-hover");
+
+  //SUB
+  sub_span.onclick = function () {
+    //localStorage.setItem("subscribed", "true");
+    modal.style.display = "none";
+    alert("Дякуємо за підписку!");
+  };
+
+  // CLOSE
+  reject_span.onclick = function () {
+    modal.style.display = "none";
+  };
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}, 5000);
+
+// setTimeout(function () {
+//   if (localStorage.getItem("subscribed") !== "true") {
+//     var subscribeModal = new bootstrap.Modal(
+//       document.getElementById("subscribeModal")
+//     );
+//     subscribeModal.show();
+//     document
+//       .getElementById("subscribeButton")
+//       .addEventListener("click", function () {
+//         localStorage.setItem("subscribed", "true");
+//         subscribeModal.hide();
+//         alert("Дякуємо за підписку!");
+//       });
 //   }
-// }
+// }, 10000);
 
-// TODO filter  timer-for-add  subscribe
+// TODO filter subscribe
 // FIXME timer on start?
 // START
 
