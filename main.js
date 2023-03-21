@@ -110,11 +110,6 @@ setTimeout(function () {
 }, 10000);
 
 // SUBSCRIBE
-
-// modal = document.getElementById("subcribe");
-// span = document.getElementById("close-sub");
-// let sub_span = document.getElementById("sub-span");
-
 setTimeout(function () {
   let modal = document.getElementById("subcribe");
   let span = document.getElementById("close-sub");
