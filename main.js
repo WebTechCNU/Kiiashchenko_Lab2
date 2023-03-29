@@ -1,7 +1,7 @@
 // Масив об'єктів із зображеннями та описом
 const images = [
   {
-    src: "./Photos/evolve-cyberpart-gold-h-evcp-ghr410n305-16s480h1tbk-black.png",
+    src: "./Photos/1.png",
     alt: "Товар 1",
     description:
       "Процесор: Intel Core i5-11400F (2.6–4.4 ГГц), 6 ядер\nМатеринська плата: Asus Prime H510\nВідеокарта: RTX 3060, 12 ГБ\nВнутрішній накопичувач: 500 ГБ (SSD) + 1000 ГБ (HDD)\nВнутрішній накопичувач: Накопичувач PCI-E з підтримкою NVMe\nОперативна память: 16 ГБ, 3200 МГц (DDR4)\nБлок живлення: Chieftec Proton 600 Вт\nСертифікат блока живлення: Bronze",
@@ -10,7 +10,7 @@ const images = [
   },
 
   {
-    src: "./Photos/evolve-optipart-silver-3h-evop-s3hi114fn306-32s500h1tbk-black.png",
+    src: "./Photos/2.png",
     alt: "Товар 2",
     description: "AMD",
     price: 300,
@@ -18,7 +18,7 @@ const images = [
   },
 
   {
-    src: "./Photos/evolve-starterpart-bronze-b-evsp-bbr560g-16s500hbk-black.png",
+    src: "./Photos/3.png",
     alt: "Товар 3",
     description: "Intel",
     price: 300,
@@ -26,7 +26,7 @@ const images = [
   },
 
   {
-    src: "./Photos/t-computer-gaming-gtx1660s-base-tcgb-10100n1660s-16s480bk-black.png",
+    src: "./Photos/4.png",
     alt: "Товар 4",
     description: "AMD",
     price: 300,
@@ -34,7 +34,7 @@ const images = [
   },
 
   {
-    src: "./Photos/Photo-3.jpeg",
+    src: "./Photos/5.jpg",
     alt: "Товар 3",
     description: "AMD",
     price: 300,
@@ -42,7 +42,7 @@ const images = [
   },
 
   {
-    src: "./Photos/Photo-3.jpeg",
+    src: "./Photos/6.png",
     alt: "Товар 3",
     description: "Intel",
     price: 300,
@@ -50,7 +50,31 @@ const images = [
   },
 
   {
-    src: "./Photos/Photo-3.jpeg",
+    src: "./Photos/7.png",
+    alt: "Товар 3",
+    description: "AMD",
+    price: 300,
+    filter_setting: "AMD",
+  },
+
+  {
+    src: "./Photos/8.png",
+    alt: "Товар 3",
+    description: "AMD",
+    price: 300,
+    filter_setting: "AMD",
+  },
+
+  {
+    src: "./Photos/9.png",
+    alt: "Товар 3",
+    description: "AMD",
+    price: 300,
+    filter_setting: "AMD",
+  },
+
+  {
+    src: "./Photos/10.png",
     alt: "Товар 3",
     description: "AMD",
     price: 300,
@@ -58,94 +82,46 @@ const images = [
   },
 ];
 
+const settings_list = [];
+images.forEach((item) => {
+  if (!settings_list.includes(item.filter_setting)) {
+    settings_list.push(item.filter_setting);
+  }
+});
+console.log(settings_list);
+
+// * FILTER BUTTONS
+const buttons = document.getElementById("buttons");
+let str_buttons = "";
+
+for(let i = 0; i < settings_list.length; i++) {
+  str_buttons += `<button class="filter-button text" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
+}
+
+buttons.innerHTML += str_buttons;
+
+
+// * NODES
 let filter_setting = "";
-
-// NODES
 const imagesContainer = document.getElementById("images-container");
-const showImagesBtn = document.getElementById("show-images-btn");
 
-// let item_limit = 2;
-// function addImageToContainer() {
-//   if (item_limit != 2) {
-//     document.querySelector("#arrow").remove();
-//   }
+function GetNodes(filter_setting) {
+  let div = document.getElementById("images-container");
+  div.innerHTML = "";
+  let str_images = "";
 
-//   let div = document.getElementById("images-container");
-//   let str_images = "";
-//   let view_option = "";
+  for (let i = 0; i < images.length; i++) {
+    if (!images[i].description.includes(filter_setting)) {
+      continue;
+    }
 
-//   for (let i = item_limit - 2; (i < images.length && i < item_limit); i++) {
-//     view_option = "";
-//     if (!images[i].description.includes(filter_setting)) {
-//       view_option = "hide";
-//       item_limit++;
-//     }
+    str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo text'>${images[i].description}</div><span class='price text'>${images[i].price} UAH</span></div>`;
+  }
 
-//     str_images += `<div class='node ${view_option}'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><span class='price'>${images[i].price} UAH</span></div>`;
-
-//   }
-
-//   let arrow =
-//     "<div id='arrow' class='node'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='addImageToContainer()'><div style='display: none'>AMD Intel</div></div>";
-
-//   div.innerHTML += str_images + arrow;
-
-//   item_limit += 2;
-// }
-
-// //FIlTER
-// function Filter(option) {
-//   filter_setting = option;
-//   const nodes = document.querySelectorAll(".node");
-
-//   // nodes.forEach((element) => {
-//   //   const text = element.textContent;
-
-//   //   if (!text.includes(option)) {
-//   //     if (element.classList.contains("view")) {
-//   //       element.classList.remove("view");
-//   //     }
-//   //     element.classList.add("hide");
-//   //     return;
-//   //   }
-  
-//   //   element.classList.remove("hide");
-//   //   element.classList.add("view");
-//   // });
-
-//   let i = 0;
-//   while (i < 3 && i < nodes.length)
-//   {
-//     element = nodes[i];
-//     const text = element.textContent;
-
-//     if (!text.includes(option)) {
-//       if (element.classList.contains("view")) {
-//         element.classList.remove("view");
-//       }
-//       element.classList.add("hide");
-//       i++;
-//       continue;
-//     }
-
-//     element.classList.remove("hide");
-//     element.classList.add("view");
-//     i++;
-//   }
-
-//   item_limit = i;
-//   while (i < nodes.length)
-//   {
-//     element = nodes[i];
-//   }
-  
-//   const arrow = document.getElementById("arrow");
-//   arrow.classList.add("view");
-// }
-
+  div.innerHTML += str_images;
+}
 
 // TODO фільтр і підгрузку зробити в одну функцію
-
 
 // AD
 setTimeout(function () {
@@ -216,4 +192,4 @@ setTimeout(function () {
 // TODO filter subscribe
 // START
 
-addImageToContainer();
+GetNodes("");
