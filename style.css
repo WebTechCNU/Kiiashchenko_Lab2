@@ -50,7 +50,7 @@ body {
     animation-name: example;
     animation-duration: 2s;
 }
-
+/* 
 @keyframes example {
     from {
         opacity: 0;
@@ -59,7 +59,7 @@ body {
     to {
         opacity: 1;
     }
-}
+} */
 
 .photo {
     display: block;
@@ -153,6 +153,11 @@ body {
     float: right;
 }
 
+.sub-span:hover, 
+.reject-span:hover {
+    cursor: pointer;
+}
+
 .close-sub {
     color: rgba(0, 0, 0, 0.5);
     float: right;
@@ -198,6 +203,10 @@ body {
     color: red;
 }
 
+.txt-grey {
+    color:darkgrey;
+}
+
 .buttons {
     display: flex;
     /* align-items: center; */
@@ -212,15 +221,22 @@ ul {
 }
 
 li {
-    margin: 40px;
-    display: inline;
+    text-align: center;
+    margin: 10px 10px;
+    display: inline-block;
     font-size: 20px;
+    width: 70px;
+}
+
+li:hover,
+li:focus {
+    cursor: pointer;
 }
 
 .hide {
     display: none;
-    animation-name: hide;
-    animation-duration: 2s;
+    /* animation-name: hide;
+    animation-duration: 2s; */
 }
 
 @keyframes hide {
@@ -235,8 +251,8 @@ li {
 
 .view {
     display: block;
-    animation-name: view;
-    animation-duration: 2s;
+    /* animation-name: view;
+    animation-duration: 2s; */
 }
 
 @keyframes view {

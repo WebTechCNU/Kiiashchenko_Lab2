@@ -100,7 +100,7 @@ setTimeout(function () {
       };
     }
   }, 1000);
-}, 9000000);
+}, 10000);
 
 // SUBSCRIBE
 setTimeout(function () {
