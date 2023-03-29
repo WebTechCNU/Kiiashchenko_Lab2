@@ -46,15 +46,15 @@ const images = [
     alt: "Товар 3",
     description: "Intel",
     price: 300,
-    filter_setting: "AMD",
+    filter_setting: "Intel",
   },
 
   {
     src: "./Photos/7.png",
     alt: "Товар 3",
-    description: "AMD",
+    description: "AMIntelD",
     price: 300,
-    filter_setting: "AMD",
+    filter_setting: "Intel",
   },
 
   {
@@ -76,9 +76,9 @@ const images = [
   {
     src: "./Photos/10.png",
     alt: "Товар 3",
-    description: "AMD",
+    description: "Intel",
     price: 300,
-    filter_setting: "AMD",
+    filter_setting: "Intel",
   },
 ];
 
@@ -122,7 +122,7 @@ function GetNodes(filter_setting, delete_nodes = true) {
   }
 
   for (let j = 0; i < images.length && j < 3; i++) {
-    if (!images[i].description.includes(global_filter_setting)) {
+    if (!images[i].filter_setting.includes(global_filter_setting)) {
       continue;
     }
 

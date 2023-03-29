@@ -1,9 +1,11 @@
-:root{
+:root {
     --node-height: 340px;
+    --node-width: 300px;
     --node-border-color: rgb(182, 27, 0);
-    --buttons-color: aquamarine;
-    --button-border-color: rgb(71, 71, 71);
+    --buttons-color: #a2c617;
+    --button-border-color: rgb(143, 58, 146);
     --button-box-shadow: rgb(161, 161, 161);
+    --button-text-color: #ffffff;
 }
 
 * {
@@ -12,6 +14,7 @@
 
 body {
     margin: 0;
+    /* background-color: rgb(85, 85, 85); */
 }
 
 .text {
@@ -51,6 +54,8 @@ body {
     border-radius: 10px;
 
     box-shadow: 0px 0px 6px var(--button-box-shadow);
+    color: var(--button-text-color);
+    font-weight: bold;
 }
 
 .container {
@@ -65,11 +70,11 @@ body {
 .node {
     opacity: 1;
     height: var(--node-height);
-    width: 300px;
+    width: var(--node-width);
 
     margin: 20px;
 
-    border: solid 2px;
+    border: solid 3px;
     border-radius: 10px;
     border-color: var(--node-border-color);
 }
@@ -97,7 +102,7 @@ body {
 .text-on-photo {
     transition: .5s ease;
     opacity: 0;
-    
+
     height: calc(var(--node-height) - 50px);
 
     margin: 0 10px 0 10px;
@@ -111,16 +116,18 @@ body {
 
     border: solid 2px;
     border-radius: 5px;
-    border-color: #000;
+    border-color: var(--button-border-color);
 
     background-color: var(--buttons-color);
+    color: var(--button-text-color);
 
     text-align: center;
+    font-weight: bold;
 }
 
 .arrow {
-    height: 340px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
 }
 
 /* .arrow {
