@@ -118,6 +118,11 @@ body {
     text-align: center;
 }
 
+.arrow {
+    height: 340px;
+    width: 300px;
+}
+
 /* .arrow {
     height: 340px;
     width: 300px;

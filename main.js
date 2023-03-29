@@ -94,34 +94,44 @@ console.log(settings_list);
 const buttons = document.getElementById("buttons");
 let str_buttons = "";
 
-for(let i = 0; i < settings_list.length; i++) {
+for (let i = 0; i < settings_list.length; i++) {
   str_buttons += `<button class="filter-button text" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
 }
 
 buttons.innerHTML += str_buttons;
 
-
 // * NODES
-let filter_setting = "";
+let filter_setting = "",
+  i = 0;
+let global_filter_setting = "";
+const arrow = `<div id='arrow' class='node'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='GetNodes("", false)'></div>`;
 const imagesContainer = document.getElementById("images-container");
 
-function GetNodes(filter_setting) {
+function GetNodes(filter_setting, delete_nodes = true) {
   let div = document.getElementById("images-container");
-  div.innerHTML = "";
+  let arrow_DOM = document.getElementById("arrow");
   let str_images = "";
 
-  for (let i = 0; i < images.length; i++) {
-    if (!images[i].description.includes(filter_setting)) {
+  if (delete_nodes) {
+    div.innerHTML = "";
+    global_filter_setting = filter_setting;
+    i = 0;
+  }
+  if (arrow_DOM) {
+    arrow_DOM.remove();
+  }
+
+  for (let j = 0; i < images.length && j < 3; i++) {
+    if (!images[i].description.includes(global_filter_setting)) {
       continue;
     }
 
     str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo text'>${images[i].description}</div><span class='price text'>${images[i].price} UAH</span></div>`;
+    j++;
   }
 
-  div.innerHTML += str_images;
+  div.innerHTML += str_images + arrow;
 }
-
-// TODO фільтр і підгрузку зробити в одну функцію
 
 // AD
 setTimeout(function () {
@@ -137,7 +147,6 @@ setTimeout(function () {
     if (count >= 0) {
       timer.innerHTML = "Зачекайте " + count + " секунд, щоб закрити рекламу";
     } else {
-      ///clearInterval(interval);
       timer.innerHTML = "Ви можете закрити рекламу";
 
       span.classList.add("close-hover");
@@ -192,4 +201,4 @@ setTimeout(function () {
 // TODO filter subscribe
 // START
 
-GetNodes("");
+GetNodes("", false);
