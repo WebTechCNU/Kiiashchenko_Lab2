@@ -87,6 +87,60 @@ function addImageToContainer() {
   item_limit += 2;
 }
 
+//FIlTER
+function Filter(option) {
+  filter_setting = option;
+  const nodes = document.querySelectorAll(".node");
+
+  // nodes.forEach((element) => {
+  //   const text = element.textContent;
+
+  //   if (!text.includes(option)) {
+  //     if (element.classList.contains("view")) {
+  //       element.classList.remove("view");
+  //     }
+  //     element.classList.add("hide");
+  //     return;
+  //   }
+  
+  //   element.classList.remove("hide");
+  //   element.classList.add("view");
+  // });
+
+  let i = 0;
+  while (i < 3 && i < nodes.length)
+  {
+    element = nodes[i];
+    const text = element.textContent;
+
+    if (!text.includes(option)) {
+      if (element.classList.contains("view")) {
+        element.classList.remove("view");
+      }
+      element.classList.add("hide");
+      i++;
+      continue;
+    }
+
+    element.classList.remove("hide");
+    element.classList.add("view");
+    i++;
+  }
+
+  item_limit = i;
+  while (i < nodes.length)
+  {
+    element = nodes[i];
+  }
+  
+  const arrow = document.getElementById("arrow");
+  arrow.classList.add("view");
+}
+
+
+// TODO фільтр і підгрузку зробити в одну функцію
+
+
 // AD
 setTimeout(function () {
   let modal = document.getElementById("modal");
@@ -157,56 +211,3 @@ setTimeout(function () {
 // START
 
 addImageToContainer();
-
-//FIlTER
-function Filter(option) {
-  filter_setting = option;
-  const nodes = document.querySelectorAll(".node");
-
-  // nodes.forEach((element) => {
-  //   const text = element.textContent;
-
-  //   if (!text.includes(option)) {
-  //     if (element.classList.contains("view")) {
-  //       element.classList.remove("view");
-  //     }
-  //     element.classList.add("hide");
-  //     return;
-  //   }
-
-  //   element.classList.remove("hide");
-  //   element.classList.add("view");
-  // });
-
-  let i = 0;
-  while (i < 3 && i < nodes.length)
-  {
-    element = nodes[i];
-    const text = element.textContent;
-
-    if (!text.includes(option)) {
-      if (element.classList.contains("view")) {
-        element.classList.remove("view");
-      }
-      element.classList.add("hide");
-      i++;
-      continue;
-    }
-
-    element.classList.remove("hide");
-    element.classList.add("view");
-    i++;
-  }
-
-  item_limit = i;
-  while (i < nodes.length)
-  {
-    element = nodes[i];
-  }
-  
-  const arrow = document.getElementById("arrow");
-  arrow.classList.add("view");
-}
-
-
-// TODO фільтр і підгрузку зробити в одну функцію
