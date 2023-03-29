@@ -5,47 +5,55 @@ const images = [
     alt: "Товар 1",
     description:
       "Процесор: Intel Core i5-11400F (2.6–4.4 ГГц), 6 ядер\nМатеринська плата: Asus Prime H510\nВідеокарта: RTX 3060, 12 ГБ\nВнутрішній накопичувач: 500 ГБ (SSD) + 1000 ГБ (HDD)\nВнутрішній накопичувач: Накопичувач PCI-E з підтримкою NVMe\nОперативна память: 16 ГБ, 3200 МГц (DDR4)\nБлок живлення: Chieftec Proton 600 Вт\nСертифікат блока живлення: Bronze",
+    price: 1000,
   },
 
   {
     src: "./Photos/evolve-optipart-silver-3h-evop-s3hi114fn306-32s500h1tbk-black.png",
     alt: "Товар 2",
     description: "AMD",
+    price: 300,
   },
 
   {
     src: "./Photos/evolve-starterpart-bronze-b-evsp-bbr560g-16s500hbk-black.png",
     alt: "Товар 3",
     description: "Intel",
+    price: 300,
   },
 
   {
     src: "./Photos/t-computer-gaming-gtx1660s-base-tcgb-10100n1660s-16s480bk-black.png",
     alt: "Товар 4",
     description: "AMD",
+    price: 300,
   },
 
   {
     src: "./Photos/Photo-3.jpeg",
     alt: "Товар 3",
-    description: "Опис зображення 3",
+    description: "AMD",
+    price: 300,
   },
 
   {
     src: "./Photos/Photo-3.jpeg",
     alt: "Товар 3",
-    description: "Опис зображення 3",
+    description: "Intel",
+    price: 300,
   },
 
   {
     src: "./Photos/Photo-3.jpeg",
     alt: "Товар 3",
-    description: "Опис зображення 3",
+    description: "AMD",
+    price: 300,
   },
 ];
 
-// NODES
+let filter_setting = "";
 
+// NODES
 const imagesContainer = document.getElementById("images-container");
 const showImagesBtn = document.getElementById("show-images-btn");
 
@@ -58,9 +66,17 @@ function addImageToContainer() {
 
   let div = document.getElementById("images-container");
   let str_images = "";
+  let view_option = "";
 
-  for (let i = item_limit - 2; i < item_limit; i++) {
-    str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><p class='price'>300 UAH</p></div>`;
+  for (let i = item_limit - 2; (i < images.length && i < item_limit); i++) {
+    view_option = "";
+    if (!images[i].description.includes(filter_setting)) {
+      view_option = "hide";
+      item_limit++;
+    }
+
+    str_images += `<div class='node ${view_option}'><img src='${images[i].src}' class='photo'><div class='text-on-photo'>${images[i].description}</div><span class='price'>${images[i].price} UAH</span></div>`;
+
   }
 
   let arrow =
@@ -100,7 +116,7 @@ setTimeout(function () {
       };
     }
   }, 1000);
-}, 10000);
+}, 1000000000);
 
 // SUBSCRIBE
 setTimeout(function () {
@@ -144,9 +160,28 @@ addImageToContainer();
 
 //FIlTER
 function Filter(option) {
+  filter_setting = option;
   const nodes = document.querySelectorAll(".node");
 
-  nodes.forEach((element) => {
+  // nodes.forEach((element) => {
+  //   const text = element.textContent;
+
+  //   if (!text.includes(option)) {
+  //     if (element.classList.contains("view")) {
+  //       element.classList.remove("view");
+  //     }
+  //     element.classList.add("hide");
+  //     return;
+  //   }
+
+  //   element.classList.remove("hide");
+  //   element.classList.add("view");
+  // });
+
+  let i = 0;
+  while (i < 3 && i < nodes.length)
+  {
+    element = nodes[i];
     const text = element.textContent;
 
     if (!text.includes(option)) {
@@ -154,10 +189,24 @@ function Filter(option) {
         element.classList.remove("view");
       }
       element.classList.add("hide");
-      return;
+      i++;
+      continue;
     }
 
     element.classList.remove("hide");
     element.classList.add("view");
-  });
+    i++;
+  }
+
+  item_limit = i;
+  while (i < nodes.length)
+  {
+    element = nodes[i];
+  }
+  
+  const arrow = document.getElementById("arrow");
+  arrow.classList.add("view");
 }
+
+
+// TODO фільтр і підгрузку зробити в одну функцію
