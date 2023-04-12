@@ -59,6 +59,13 @@ body {
     float: right;
 }
 
+.hover-pointer {
+}
+
+.hover-pointer:hover {
+    cursor: pointer;
+}
+
 .nav {
     display: flex;
     align-items: center;
