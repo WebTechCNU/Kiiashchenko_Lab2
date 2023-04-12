@@ -21,6 +21,14 @@ body {
     font-family: "JetBrains Mono";
 }
 
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
 .main-color-bck{
     background-color: var(--main-color);
 }
@@ -31,6 +39,10 @@ body {
 
 .this-page-color {
     color: var(--buttons-color);
+}
+
+.float-right {
+    float: right;
 }
 
 .nav {
@@ -82,8 +94,6 @@ body {
     align-content: center;
     justify-content: center;
     grid-template-columns: repeat(3, auto);
-
-    /* margin-top: 10px; */
 }
 
 .node {
@@ -130,7 +140,7 @@ body {
 
 .price {
     position: sticky;
-    margin: 10px 20px;
+    margin: 0px 20px 0px 20px;
     padding: 2px 7px;
 
     border: solid 2px;
@@ -142,6 +152,22 @@ body {
 
     text-align: center;
     font-weight: bold;
+}
+
+.margin0{
+    margin: 0;
+}
+
+.btn-margin{
+    margin-top: -4px;
+}
+
+.btn-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: -3px 20px 0px 20px;
 }
 
 .arrow {

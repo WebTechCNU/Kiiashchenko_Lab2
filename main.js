@@ -1,5 +1,5 @@
 // Масив об'єктів із зображеннями та описом
-const images = [
+const nodes = [
   {
     src: "./Photos/1.png",
     alt: "Товар 1",
@@ -85,12 +85,11 @@ const images = [
 //
 //
 // * FILTER BUTTONS
-
 const settings_list = [];
 const buttons = document.getElementById("buttons");
 
 if (buttons != null) {
-  images.forEach((item) => {
+  nodes.forEach((item) => {
     if (!settings_list.includes(item.filter_setting)) {
       settings_list.push(item.filter_setting);
     }
@@ -128,19 +127,67 @@ function GetNodes(filter_setting, delete_nodes = true) {
     arrow_DOM.remove();
   }
 
-  for (let j = 0; i < images.length && j < 3; i++) {
-    if (!images[i].filter_setting.includes(global_filter_setting)) {
+  for (let j = 0; i < nodes.length && j < 3; i++) {
+    if (!nodes[i].filter_setting.includes(global_filter_setting)) {
       continue;
     }
 
-    str_images += `<div class='node'><img src='${images[i].src}' class='photo'><div class='text-on-photo text'>${images[i].description}</div><span class='price text'>${images[i].price} UAH</span></div>`;
+    str_images += `<div class='node ${i}'><img src='${nodes[i].src}' class='photo'><div class='text-on-photo text'>${nodes[i].description}</div><button class='price text btn-margin font-size-16' onclick="AddToCart(${i})">${nodes[i].price} UAH</button></div>`;
     j++;
   }
 
   div.innerHTML += str_images + arrow;
 }
 
-// AD
+// ADDTOCART
+let cart = [];
+if (localStorage.getItem("cart") != null) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
+
+function AddToCart(index) {
+  added_node = nodes[Number(index)];
+
+  if (cart.includes(added_node)) {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i] == added_node) {
+        cart[i].amount++;
+        break;
+      }
+    }
+    // localStorage.removeItem("cart");
+    // localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    added_node.amount = 1;
+    cart.push(added_node);
+    console.log(cart);
+
+    if (localStorage.getItem("cart") == null) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+      return;
+    }
+  }
+
+  localStorage.removeItem("cart");
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+//
+//
+//
+//
+//
+///
+//
+//
+//
+//
+//
+//
+//
+///
+
+// * AD
 setTimeout(function () {
   let modal = document.getElementById("modal");
   let span = document.getElementById("close");
@@ -170,7 +217,7 @@ setTimeout(function () {
   }, 1000);
 }, 1000000000);
 
-// SUBSCRIBE
+// * SUBSCRIBE
 setTimeout(function () {
   let modal = document.getElementById("subcribe");
   let span = document.getElementById("close-sub");
@@ -205,7 +252,12 @@ setTimeout(function () {
   };
 }, 5000);
 
-// TODO filter subscribe
-// START
+// * START
+current_page = window.location.href;
 
-GetNodes("", false);
+if (current_page.includes("index.html")) {
+  GetNodes("", false);
+}
+if (current_page.includes("cart.html")) {
+  GetNodesForCart("", false);
+}
