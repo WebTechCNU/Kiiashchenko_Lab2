@@ -82,24 +82,31 @@ const images = [
   },
 ];
 
-const settings_list = [];
-images.forEach((item) => {
-  if (!settings_list.includes(item.filter_setting)) {
-    settings_list.push(item.filter_setting);
-  }
-});
-console.log(settings_list);
-
+//
+//
 // * FILTER BUTTONS
-const buttons = document.getElementById("buttons");
-let str_buttons = "";
 
-for (let i = 0; i < settings_list.length; i++) {
-  str_buttons += `<button class="filter-button text" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
+const settings_list = [];
+const buttons = document.getElementById("buttons");
+
+if (buttons != null) {
+  images.forEach((item) => {
+    if (!settings_list.includes(item.filter_setting)) {
+      settings_list.push(item.filter_setting);
+    }
+  });
+
+  let str_buttons = "";
+
+  for (let i = 0; i < settings_list.length; i++) {
+    str_buttons += `<button class="filter-button text" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
+  }
+
+  buttons.innerHTML += str_buttons;
 }
 
-buttons.innerHTML += str_buttons;
-
+//
+//
 // * NODES
 let filter_setting = "",
   i = 0;
