@@ -17,9 +17,9 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
 
     str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'><div class='text-on-photo text'>${cart[i].description}</div>
     <div class="btn-cont font-size-14">
-        <label class='price text margin0'>${cart[i].price} UAH</label> 
-        <button class='price text margin0' onclick="DeleteNode(${i})">Х</button>
-        <label class='price text margin0'>К-сть ${cart[i].amount}</label>
+        <label class='price text margin0 bck-button-color'>${cart[i].price} UAH</label> 
+        <button class='price text margin0 bck-delete-color' onclick="DeleteNodeFromCart(${i})">Х</button>
+        <label class='price text margin0 bck-button-color'>К-сть ${cart[i].amount}</label>
     </div> 
     </div>
     `;
@@ -28,7 +28,7 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
   div.innerHTML += str_images;
 }
 
-function DeleteNode(index) {
+function DeleteNodeFromCart(index) {
   cart = JSON.parse(localStorage.getItem("cart"));
   cart.splice(index, 1);
 
@@ -36,4 +36,11 @@ function DeleteNode(index) {
   localStorage.setItem("cart", JSON.stringify(cart));
   GetNodesForCart("");
 }
-// * TODO delete all from cart
+
+function DeleteAllFromCart()
+{
+    localStorage.removeItem("cart");
+    GetNodesForCart("");
+}
+
+

@@ -7,6 +7,7 @@
     --button-border-color: rgb(143, 58, 146);
     --button-box-shadow: rgb(161, 161, 161);
     --button-text-color: #ffffff;
+    --delete-color: #b94242;
 }
 
 * {
@@ -29,13 +30,26 @@ body {
     font-size: 16px;
 }
 
+.header-text {
+    font-size: 30px;
+}
+
 .main-color-bck{
     background-color: var(--main-color);
 }
 
-.header-text {
-    font-size: 30px;
+.bck-delete-color{
+    background-color: var(--delete-color);
 }
+
+.bck-button-color{
+    background-color: var(--buttons-color);
+}
+
+.delete-color{
+    color: var(--delete-color);
+}
+
 
 .this-page-color {
     color: var(--buttons-color);
@@ -65,7 +79,6 @@ body {
     margin-left: 20px;
 }
 
-
 .buttons {
     display: flex;
     justify-content: center;
@@ -75,8 +88,6 @@ body {
 }
 
 .filter-button {
-    background-color: var(--buttons-color);
-
     margin: 0 20px;
     padding: 2px 7px;
     font-size: 19px;
@@ -147,7 +158,7 @@ body {
     border-radius: 5px;
     border-color: var(--button-border-color);
 
-    background-color: var(--buttons-color);
+    /* background-color: var(--buttons-color); */
     color: var(--button-text-color);
 
     text-align: center;

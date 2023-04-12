@@ -84,26 +84,6 @@ const nodes = [
 
 //
 //
-// * FILTER BUTTONS
-const settings_list = [];
-const buttons = document.getElementById("buttons");
-
-if (buttons != null) {
-  nodes.forEach((item) => {
-    if (!settings_list.includes(item.filter_setting)) {
-      settings_list.push(item.filter_setting);
-    }
-  });
-
-  let str_buttons = "";
-
-  for (let i = 0; i < settings_list.length; i++) {
-    str_buttons += `<button class="filter-button text" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
-  }
-
-  buttons.innerHTML += str_buttons;
-}
-
 //
 //
 // * NODES
@@ -132,7 +112,7 @@ function GetNodes(filter_setting, delete_nodes = true) {
       continue;
     }
 
-    str_images += `<div class='node ${i}'><img src='${nodes[i].src}' class='photo'><div class='text-on-photo text'>${nodes[i].description}</div><button class='price text btn-margin font-size-16' onclick="AddToCart(${i})">${nodes[i].price} UAH</button></div>`;
+    str_images += `<div class='node ${i}'><img src='${nodes[i].src}' class='photo'><div class='text-on-photo text'>${nodes[i].description}</div><button class='price text btn-margin font-size-16 bck-button-color' onclick="AddToCart(${i})">${nodes[i].price} UAH</button></div>`;
     j++;
   }
 
@@ -155,8 +135,6 @@ function AddToCart(index) {
         break;
       }
     }
-    // localStorage.removeItem("cart");
-    // localStorage.setItem("cart", JSON.stringify(cart));
   } else {
     added_node.amount = 1;
     cart.push(added_node);
@@ -253,11 +231,32 @@ setTimeout(function () {
 }, 5000);
 
 // * START
-current_page = window.location.href;
+let current_page = window.location.href;
 
 if (current_page.includes("index.html")) {
   GetNodes("", false);
+
+  // * FILTER BUTTONS
+  const settings_list = [];
+  const buttons = document.getElementById("buttons");
+
+  if (buttons != null) {
+    nodes.forEach((item) => {
+      if (!settings_list.includes(item.filter_setting)) {
+        settings_list.push(item.filter_setting);
+      }
+    });
+
+    let str_buttons = "";
+
+    for (let i = 0; i < settings_list.length; i++) {
+      str_buttons += `<button class="filter-button text bck-button-color" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
+    }
+
+    buttons.innerHTML += str_buttons;
+  }
 }
+
 if (current_page.includes("cart.html")) {
   GetNodesForCart("", false);
 }
