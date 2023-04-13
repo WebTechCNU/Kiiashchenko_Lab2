@@ -40,7 +40,9 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
     sum += cart[i].price * cart[i].amount;
   }
 
-  sum_str = `<div class="sum-cont"><label class="sticky Reem-Kufi margin0 font-size-24 main-color sum-cart">Сума: ${sum} грн</label></div>`;
+  sum_str = `<div class="sum-cont sum-cart">
+  <label class="sticky Reem-Kufi margin0 font-size-30 main-color border padding-5 bck-button-color">Сума: ${sum} грн</label>
+  </div>`;
   div.innerHTML += str_images;
   sum_cart.innerHTML = sum_str;
 }
