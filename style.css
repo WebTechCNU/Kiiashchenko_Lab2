@@ -20,11 +20,11 @@ body {
 }
 
 .text {
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono", sans-serif;
 }
 
 .Reem-Kufi {
-    font-family: "Reem Kufi";
+    font-family: "Reem Kufi" , sans-serif;
 }
 
 .bold{

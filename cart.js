@@ -41,7 +41,13 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
   }
 
   sum_str = `<div class="sum-cont sum-cart">
-  <label class="sticky Reem-Kufi margin0 font-size-30 main-color border padding-5 bck-button-color">Сума: ${sum} грн</label>
+  <div class="border bck-button-color padding-5"> 
+  
+  <label class="Reem-Kufi margin0 font-size-30 main-color">Сума: </label>
+  <label class="Reem-Kufi margin0 font-size-30 main-color bold">${sum} </label>
+  <label class="Reem-Kufi margin0 font-size-30 main-color">грн</label>
+  </div>
+
   </div>`;
   div.innerHTML += str_images;
   sum_cart.innerHTML = sum_str;
