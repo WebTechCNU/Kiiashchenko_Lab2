@@ -88,6 +88,10 @@ body {
     background-color: #b7cf52;
 }
 
+.bck-white {
+    background-color: #ffffff;
+}
+
 .delete-color {
     color: var(--delete-color);
 }
@@ -114,6 +118,18 @@ body {
 
 .margin0 {
     margin: 0;
+}
+
+.margin-top-2 {
+    margin-top: 2px;
+}
+
+.margin-top-3 {
+    margin-top: 3px;
+}
+
+.margin-top-7 {
+    margin-top: 7px;
 }
 
 .margin-left-rigtt-20 {
@@ -194,7 +210,6 @@ body {
     padding: 2px 7px;
     font-size: 19px;
 
-    /* background-color: #a2c617; */
     font-weight: bold;
 }
 
@@ -206,7 +221,10 @@ body {
 }
 
 .node {
+    position: relative;
+    z-index: 1;
     opacity: 1;
+
     height: var(--node-height);
     width: var(--node-width);
 
@@ -232,8 +250,9 @@ body {
 }
 
 .node:hover {
+    z-index: 10;
+
     box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
-    height: auto;
 }
 
 .node:hover .photo {
@@ -244,6 +263,7 @@ body {
 .node:hover .text-on-photo {
     opacity: 1;
     display: block;
+    box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
 }
 
 .photo {
@@ -262,7 +282,9 @@ body {
     text-align: start;
     opacity: 0;
 
-    margin: 10px 20px;
+    width: var(--node-width);
+
+    padding: 10px 20px;
 }
 
 .price {

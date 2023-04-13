@@ -1,107 +1,3 @@
-// Масив об'єктів із зображеннями та описом
-const nodes = [
-  {
-    src: "./Photos/11.png",
-    alt: "Товар 1",
-    description:
-      "Процесор: Intel Core i5-11400F (2.6–4.4 ГГц), 6 ядер\nМатеринська плата: Asus Prime H510\nВідеокарта: RTX 3060, 12 ГБ\nВнутрішній накопичувач: 500 ГБ (SSD) + 1000 ГБ (HDD)\nВнутрішній накопичувач: Накопичувач PCI-E з підтримкою NVMe\nОперативна память: 16 ГБ, 3200 МГц (DDR4)\nБлок живлення: Chieftec Proton 600 Вт\nСертифікат блока живлення: Bronze",
-    price: 1000,
-    filter_setting: "Intel",
-  },
-
-  {
-    src: "./Photos/6.png",
-    alt: "Товар 2",
-    description: "AMD",
-    price: 300,
-    filter_setting: "AMD",
-  },
-
-  {
-    src: "./Photos/12.png",
-    alt: "Товар 3",
-    description: "Intel",
-    price: 300,
-    filter_setting: "Intel",
-  },
-
-  {
-    src: "./Photos/4.png",
-    alt: "Товар 4",
-    description: "AMD",
-    price: 300,
-    filter_setting: "AMD",
-  },
-
-  {
-    src: "./Photos/5.jpg",
-    alt: "Товар 3",
-    description: "AMD",
-    price: 300,
-    filter_setting: "AMD",
-  },
-
-  {
-    src: "./Photos/2.png",
-    alt: "Товар 3",
-    description: "Intel",
-    price: 300,
-    filter_setting: "Intel",
-  },
-
-  {
-    src: "./Photos/7.png",
-    alt: "Товар 3",
-    description: "AMIntelD",
-    price: 300,
-    filter_setting: "Intel",
-  },
-
-  {
-    src: "./Photos/8.png",
-    alt: "Товар 3",
-    description: "AMD",
-    price: 300,
-    filter_setting: "AMD",
-  },
-
-  {
-    src: "./Photos/9.png",
-    alt: "Товар 3",
-    description: "AMD",
-    price: 300,
-    filter_setting: "AMD",
-  },
-
-  {
-    src: "./Photos/10.png",
-    alt: "Товар 3",
-    description: "Intel",
-    price: 300,
-    filter_setting: "Intel",
-  },
-
-  {
-    src: "./Photos/1.png",
-    alt: "Товар 3",
-    description: "Intel",
-    price: 300,
-    filter_setting: "Intel",
-  },
-
-  {
-    src: "./Photos/3.png",
-    alt: "Товар 3",
-    description: "Intel",
-    price: 300,
-    filter_setting: "Intel",
-  },
-];
-
-//
-//
-//
-//
 // * NODES
 let filter_setting = "",
   i = 0;
@@ -123,7 +19,7 @@ function GetNodes(filter_setting, delete_nodes = true) {
     arrow_DOM.remove();
   }
 
-  for (let j = 0; i < nodes.length && j < 3; i++) {
+  for (let j = 0; i < nodes.length && j < 6; i++) {
     if (!nodes[i].filter_setting.includes(global_filter_setting)) {
       continue;
     }
@@ -141,7 +37,7 @@ function GetNodes(filter_setting, delete_nodes = true) {
         <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart main-color' onclick="AddToCart(${i})"></i>
       </div>
 
-      <div class='text-on-photo'>
+      <div class='text-on-photo bck-white margin-top-7'>
         <h class=' text font-size-18 grey-color bold'>Короткі характеристики</h>
         <p class=' text font-size-14 main-color'> ${nodes[i].description}</p>
       </div>

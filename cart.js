@@ -48,11 +48,11 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
         
       </div> 
 
-      <div class='text-on-photo'>
+      <div class='text-on-photo margin-top-3 bck-white'>
 
         <h class=' text font-size-18 grey-color bold'>Короткі характеристики</h>
         <p class=' text font-size-14 main-color'> ${cart[i].description}</p>
-        
+
       </div>
     </div>
     `;
