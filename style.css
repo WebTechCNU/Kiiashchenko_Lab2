@@ -116,6 +116,21 @@ body {
     position: sticky;
 }
 
+.up-down-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
 .hover-pointer {}
 
 .hover-pointer:hover {

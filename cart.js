@@ -17,9 +17,20 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
 
     str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'><div class='text-on-photo text'>${cart[i].description}</div>
     <div class="btn-cont">
-        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'>${cart[i].price} грн</label> 
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'>${cart[i].price} грн</label>
         <label class='sticky text margin0 hover-pointer border padding-for-x font-size-16 main-color' onclick="DeleteNodeFromCart(${i})">Х</label>
-        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'>К-сть ${cart[i].amount}</label>
+
+        <div class="row">
+
+        <div class="up-down-arrows sticky">
+        <button class="sticky" onclick="AddAmount(${i})">u</button>
+        <button class="sticky" onclick="SubAmount(${i})">d</button>
+        </div>
+
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'> ${cart[i].amount}</label>
+
+        </div>
+
     </div> 
     </div>
     `;
@@ -43,4 +54,24 @@ function DeleteAllFromCart()
     GetNodesForCart("");
 }
 
+function AddAmount(index)
+{
+    cart = JSON.parse(localStorage.getItem("cart"));
+    cart[index].amount++;
+    localStorage.removeItem("cart");
+    localStorage.setItem("cart", JSON.stringify(cart));
+    GetNodesForCart("");
+}
 
+function SubAmount(index)
+{
+    cart = JSON.parse(localStorage.getItem("cart"));
+    cart[index].amount--;
+    if (cart[index].amount == 0)
+    {
+        cart.splice(index, 1);
+    }
+    localStorage.removeItem("cart");
+    localStorage.setItem("cart", JSON.stringify(cart));
+    GetNodesForCart("");
+}
