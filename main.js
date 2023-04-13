@@ -114,9 +114,8 @@ function GetNodes(filter_setting, delete_nodes = true) {
 
     str_images += `<div class='node ${i}'>
     <img src='${nodes[i].src}' class='photo'>
-    <div class='text-on-photo text'>
-    ${nodes[i].description}
-    </div>
+      
+
       <div class="btn-cont font-size-24">
         <div class="margin-left-rigtt-20">
           <label class='sticky Reem-Kufi main-color bold'>${nodes[i].price}</label>
@@ -125,6 +124,12 @@ function GetNodes(filter_setting, delete_nodes = true) {
         
         <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart main-color' onclick="AddToCart(${i})"></i>
       </div>
+
+      <div class='text-on-photo'>
+        <h class=' text font-size-18 grey-color bold'>Короткі характеристики</h>
+        <p class=' text font-size-14 main-color'> ${nodes[i].description}</p>
+      </div>
+
     </div>`;
     j++;
   }
