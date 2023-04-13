@@ -221,6 +221,10 @@ body {
     height: auto;
 }
 
+.node:hover:last-child{
+    height: var(--node-height);
+}
+
 .node:hover .photo {
     opacity: 0.8;
     filter: blur(1px);
@@ -228,6 +232,7 @@ body {
 
 .node:hover .text-on-photo {
     opacity: 1;
+    display: block;
 }
 
 .photo {
@@ -242,6 +247,7 @@ body {
 }
 
 .text-on-photo {
+    display: none;
     text-align: start;
     opacity: 0;
 
