@@ -1,11 +1,16 @@
 function GetNodesForCart(filter_setting, delete_nodes = true) {
   let div = document.getElementById("images-container");
   let sum_cart = document.getElementById("sum-cart");
-  let str_images = "", sum_str = "";
+  let str_images = "",
+    sum_str = "";
   let sum = 0;
 
-  cart = JSON.parse(localStorage.getItem("cart"));
-  console.log(cart);
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart);
+  } else {
+    cart = [];
+  }
 
   if (delete_nodes) {
     div.innerHTML = "";
@@ -18,7 +23,8 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
       continue;
     }
 
-    str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'><div class='text-on-photo text'>${cart[i].description}</div>
+    str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'>
+
     <div class="btn-cont">
 
         <div> 
@@ -39,21 +45,38 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
 
         </div>
 
-    </div> 
+        
+      </div> 
+
+      <div class='text-on-photo'>
+
+        <h class=' text font-size-18 grey-color bold'>Короткі характеристики</h>
+        <p class=' text font-size-14 main-color'> ${cart[i].description}</p>
+        
+      </div>
     </div>
     `;
     sum += cart[i].price * cart[i].amount;
   }
 
-  sum_str = `<div class="sum-cont sum-cart">
-  <div class="border bck-button-color padding-5"> 
+  if (sum === 0) {
+    str_images += `<div class="sum-cont sum-cart">
+    <div class="border bck-button-color padding-5"> 
+    <label class="Reem-Kufi margin0 font-size-30 main-color">Кошик   порожній</label>
+    </div>
+    </div>`;
+  } else {
+    sum_str = `<div class="sum-cont sum-cart">
+    <div class="border bck-button-color padding-5"> 
+    
+    <label class="Reem-Kufi margin0 font-size-30 main-color">Сума: </label>
+    <label class="Reem-Kufi margin0 font-size-30 main-color bold">${sum} </label>
+    <label class="Reem-Kufi margin0 font-size-30 main-color">грн</label>
+    </div>
   
-  <label class="Reem-Kufi margin0 font-size-30 main-color">Сума: </label>
-  <label class="Reem-Kufi margin0 font-size-30 main-color bold">${sum} </label>
-  <label class="Reem-Kufi margin0 font-size-30 main-color">грн</label>
-  </div>
+    </div>`;
+  }
 
-  </div>`;
   div.innerHTML += str_images;
   sum_cart.innerHTML = sum_str;
 }

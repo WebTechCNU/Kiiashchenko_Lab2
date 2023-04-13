@@ -216,13 +216,24 @@ body {
     border-color: rgba(71, 71, 71, 0.4);
 }
 
+.node-arrow {
+    opacity: 1;
+    height: var(--node-height);
+    width: var(--node-width);
+
+    margin: 5px 10px;
+
+    border-bottom: solid 1px;
+    border-color: rgba(71, 71, 71, 0.4);
+}
+
+.node-arrow:hover{
+    box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
+}
+
 .node:hover {
     box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
     height: auto;
-}
-
-.node:hover:last-child{
-    height: var(--node-height);
 }
 
 .node:hover .photo {

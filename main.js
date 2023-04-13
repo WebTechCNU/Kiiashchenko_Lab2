@@ -1,7 +1,7 @@
 // Масив об'єктів із зображеннями та описом
 const nodes = [
   {
-    src: "./Photos/1.png",
+    src: "./Photos/11.png",
     alt: "Товар 1",
     description:
       "Процесор: Intel Core i5-11400F (2.6–4.4 ГГц), 6 ядер\nМатеринська плата: Asus Prime H510\nВідеокарта: RTX 3060, 12 ГБ\nВнутрішній накопичувач: 500 ГБ (SSD) + 1000 ГБ (HDD)\nВнутрішній накопичувач: Накопичувач PCI-E з підтримкою NVMe\nОперативна память: 16 ГБ, 3200 МГц (DDR4)\nБлок живлення: Chieftec Proton 600 Вт\nСертифікат блока живлення: Bronze",
@@ -10,7 +10,7 @@ const nodes = [
   },
 
   {
-    src: "./Photos/2.png",
+    src: "./Photos/6.png",
     alt: "Товар 2",
     description: "AMD",
     price: 300,
@@ -18,7 +18,7 @@ const nodes = [
   },
 
   {
-    src: "./Photos/3.png",
+    src: "./Photos/12.png",
     alt: "Товар 3",
     description: "Intel",
     price: 300,
@@ -42,7 +42,7 @@ const nodes = [
   },
 
   {
-    src: "./Photos/6.png",
+    src: "./Photos/2.png",
     alt: "Товар 3",
     description: "Intel",
     price: 300,
@@ -80,6 +80,22 @@ const nodes = [
     price: 300,
     filter_setting: "Intel",
   },
+
+  {
+    src: "./Photos/1.png",
+    alt: "Товар 3",
+    description: "Intel",
+    price: 300,
+    filter_setting: "Intel",
+  },
+
+  {
+    src: "./Photos/3.png",
+    alt: "Товар 3",
+    description: "Intel",
+    price: 300,
+    filter_setting: "Intel",
+  },
 ];
 
 //
@@ -90,7 +106,7 @@ const nodes = [
 let filter_setting = "",
   i = 0;
 let global_filter_setting = "";
-const arrow = `<div id='arrow' class='node'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='GetNodes("", false)'></div>`;
+const arrow = `<div id='arrow' class='node-arrow'><img src='./kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png' class='arrow' onclick='GetNodes("", false)'></div>`;
 const imagesContainer = document.getElementById("images-container");
 
 function GetNodes(filter_setting, delete_nodes = true) {
