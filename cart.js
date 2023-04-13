@@ -18,16 +18,16 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
     str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'><div class='text-on-photo text'>${cart[i].description}</div>
     <div class="btn-cont">
         <label class='sticky Reem-Kufi margin0 font-size-24 main-color'>${cart[i].price} грн</label>
-        <label class='sticky text margin0 hover-pointer border padding-for-x font-size-16 main-color' onclick="DeleteNodeFromCart(${i})">Х</label>
+        <label class='sticky text margin0 hover-pointer padding-for-x font-size-24 delete-color bold' onclick="DeleteNodeFromCart(${i})" title="Видалити">&#x2715</label>
 
         <div class="row">
 
         <div class="up-down-arrows sticky">
-        <button class="sticky" onclick="AddAmount(${i})">u</button>
-        <button class="sticky" onclick="SubAmount(${i})">d</button>
+        <label class="sticky hover-pointer main-color" onclick="AddAmount(${i})">&#11165</label>
+        <label class="sticky hover-pointer main-color" onclick="SubAmount(${i})">&#11167</label>
         </div>
 
-        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'> ${cart[i].amount}</label>
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color amount-cont'> ${cart[i].amount}</label>
 
         </div>
 
