@@ -117,10 +117,14 @@ function GetNodes(filter_setting, delete_nodes = true) {
     <div class='text-on-photo text'>
     ${nodes[i].description}
     </div>
-    <div class="btn-cont font-size-24">
-    <label class='sticky Reem-Kufi margin-left-rigtt-20 main-color'>${nodes[i].price} грн</label>
-    <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart main-color' onclick="AddToCart(${i})"></i>
-    </div>
+      <div class="btn-cont font-size-24">
+        <div class="margin-left-rigtt-20">
+          <label class='sticky Reem-Kufi main-color bold'>${nodes[i].price}</label>
+          <label class='sticky Reem-Kufi main-color'>грн</label>
+        </div>
+        
+        <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart main-color' onclick="AddToCart(${i})"></i>
+      </div>
     </div>`;
     j++;
   }
