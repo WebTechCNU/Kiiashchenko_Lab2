@@ -1,8 +1,11 @@
 function GetNodesForCart(filter_setting, delete_nodes = true) {
   let div = document.getElementById("images-container");
+  let sum_cart = document.getElementById("sum-cart");
+  let str_images = "", sum_str = "";
+  let sum = 0;
+
   cart = JSON.parse(localStorage.getItem("cart"));
   console.log(cart);
-  let str_images = "";
 
   if (delete_nodes) {
     div.innerHTML = "";
@@ -34,9 +37,12 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
     </div> 
     </div>
     `;
+    sum += cart[i].price * cart[i].amount;
   }
 
+  sum_str = `<div class="sum-cont"><label class="sticky Reem-Kufi margin0 font-size-24 main-color sum-cart">Сума: ${sum} грн</label></div>`;
   div.innerHTML += str_images;
+  sum_cart.innerHTML = sum_str;
 }
 
 function DeleteNodeFromCart(index) {
@@ -48,30 +54,26 @@ function DeleteNodeFromCart(index) {
   GetNodesForCart("");
 }
 
-function DeleteAllFromCart()
-{
-    localStorage.removeItem("cart");
-    GetNodesForCart("");
+function DeleteAllFromCart() {
+  localStorage.removeItem("cart");
+  GetNodesForCart("");
 }
 
-function AddAmount(index)
-{
-    cart = JSON.parse(localStorage.getItem("cart"));
-    cart[index].amount++;
-    localStorage.removeItem("cart");
-    localStorage.setItem("cart", JSON.stringify(cart));
-    GetNodesForCart("");
+function AddAmount(index) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+  cart[index].amount++;
+  localStorage.removeItem("cart");
+  localStorage.setItem("cart", JSON.stringify(cart));
+  GetNodesForCart("");
 }
 
-function SubAmount(index)
-{
-    cart = JSON.parse(localStorage.getItem("cart"));
-    cart[index].amount--;
-    if (cart[index].amount == 0)
-    {
-        cart.splice(index, 1);
-    }
-    localStorage.removeItem("cart");
-    localStorage.setItem("cart", JSON.stringify(cart));
-    GetNodesForCart("");
+function SubAmount(index) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+  cart[index].amount--;
+  if (cart[index].amount == 0) {
+    cart.splice(index, 1);
+  }
+  localStorage.removeItem("cart");
+  localStorage.setItem("cart", JSON.stringify(cart));
+  GetNodesForCart("");
 }
