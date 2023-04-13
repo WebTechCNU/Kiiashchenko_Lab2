@@ -24,7 +24,7 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
 
         <div class="up-down-arrows sticky">
         <label class="sticky hover-pointer main-color bold" onclick="AddAmount(${i})">&#11165</label>
-        <label class="sticky hover-pointer main-color bold" onclick="SubAmount(${i})">&#11167</label>
+        <label class="sticky hover-pointer main-color bold" onclick="SubAmount(${i})">&#x2B9F;</label>
         </div>
 
         <label class='sticky Reem-Kufi margin0 font-size-24 main-color amount-cont'> ${cart[i].amount}</label>
