@@ -16,10 +16,10 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
     }
 
     str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'><div class='text-on-photo text'>${cart[i].description}</div>
-    <div class="btn-cont font-size-14">
-        <label class='price text margin0 bck-button-color'>${cart[i].price} UAH</label> 
-        <button class='price text margin0 bck-delete-color hover-pointer' onclick="DeleteNodeFromCart(${i})">Х</button>
-        <label class='price text margin0 bck-button-color'>К-сть ${cart[i].amount}</label>
+    <div class="btn-cont">
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'>${cart[i].price} грн</label> 
+        <label class='sticky text margin0 hover-pointer border padding-for-x font-size-16 main-color' onclick="DeleteNodeFromCart(${i})">Х</label>
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color'>К-сть ${cart[i].amount}</label>
     </div> 
     </div>
     `;

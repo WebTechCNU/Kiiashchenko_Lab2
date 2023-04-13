@@ -22,12 +22,24 @@ body {
     font-family: "JetBrains Mono";
 }
 
+.Reem-Kufi{
+    font-family: "Reem Kufi";
+}
+
 .font-size-14 {
     font-size: 14px;
 }
 
 .font-size-16 {
     font-size: 16px;
+}
+
+.font-size-21 {
+    font-size: 21px !important;
+}
+
+.font-size-24 {
+    font-size: 24px;
 }
 
 .header-text {
@@ -50,13 +62,52 @@ body {
     color: var(--delete-color);
 }
 
+.main-color{
+    color: var(--main-color);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.underline:hover {
+    text-decoration: none;
+}
 
 .this-page-color {
     color: var(--buttons-color);
 }
 
+.black-color {
+    color: rgba(71, 71, 71, 1)
+}
+
 .float-right {
     float: right;
+}
+
+.margin0{
+    margin: 0;
+}
+
+.margin-left-rigtt-20{
+    margin: 0 20px;
+}
+
+.border{
+    border: 1px solid rgba(71, 71, 71, 1);
+}
+
+.padding-for-x{
+    padding: 0 6px;
+}
+
+.padding-for-cart{
+    padding: 6.5px 5px;
+}
+
+.sticky {
+    position: sticky;
 }
 
 .hover-pointer {
@@ -91,7 +142,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin-top: 20px;
+    margin: 20px 0px 15px;
 }
 
 .filter-button {
@@ -99,11 +150,7 @@ body {
     padding: 2px 7px;
     font-size: 19px;
 
-    border: solid 2px var(--button-border-color);
-    border-radius: 10px;
-
-    box-shadow: 0px 0px 6px var(--button-box-shadow);
-    color: var(--button-text-color);
+    /* background-color: #a2c617; */
     font-weight: bold;
 }
 
@@ -119,11 +166,14 @@ body {
     height: var(--node-height);
     width: var(--node-width);
 
-    margin: 20px;
+    margin: 5px 10px;
 
-    border: solid 3px;
-    border-radius: 10px;
-    border-color: var(--main-color  );
+    border-bottom: solid 1px;
+    border-color: rgba(71, 71, 71, 0.4);
+}
+
+.node:hover {
+    box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
 }
 
 .node:hover .photo {
@@ -158,22 +208,9 @@ body {
 
 .price {
     position: sticky;
-    margin: 0px 20px 0px 20px;
-    padding: 2px 7px;
-
-    border: solid 2px;
-    border-radius: 5px;
-    border-color: var(--button-border-color);
-
-    /* background-color: var(--buttons-color); */
-    color: var(--button-text-color);
 
     text-align: center;
     font-weight: bold;
-}
-
-.margin0{
-    margin: 0;
 }
 
 .btn-margin{
@@ -192,90 +229,6 @@ body {
     height: 100%;
     width: 100%;
 }
-
-/* .arrow {
-    height: 340px;
-    width: 300px;
-}
-
-.txt-blue {
-    color: blue;
-}
-
-.txt-red {
-    color: red;
-}
-
-.txt-grey {
-    color:darkgrey;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    margin: 30 0 ;
-} */
-
-/* ul {
-    padding: 0;
-    list-style: none;
-    display: inline;
-}
-
-li {
-    text-align: center;
-    margin: 10px 10px;
-    display: inline-block;
-    font-size: 20px;
-    width: 70px;
-} */
-
-/* li:hover,
-li:focus {
-    cursor: pointer;
-} */
-
-/* .hide {
-    display: none;
-    /* animation-name: hide;
-    animation-duration: 2s; 
-} 
-
-@keyframes hide {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.view {
-    display: block;
-    animation-name: view;
-    animation-duration: 2s; 
-}
-
-@keyframes view {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-} */
-
-
-
-
-
-
-
-
-
-
 
 /* * MODALS */
 

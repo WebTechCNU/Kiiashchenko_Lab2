@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -36,8 +40,10 @@
 
     <section>
         <div class="buttons" id="cart-buttons">
-            <button class="filter-button bck-button-color text hover-pointer" onclick="GetNodesForCart('', true)">All</button>
-            <button class="filter-button text bck-delete-color hover-pointer" onclick="DeleteAllFromCart()">Delete All</button>
+            <label class="filter-button text hover-pointer underline black-color"
+                onclick="GetNodesForCart('', true)">All</label>
+            <label class="filter-button text hover-pointer underline black-color"
+                onclick="DeleteAllFromCart()">Delete All</label>
         </div>
 
         <div class="">

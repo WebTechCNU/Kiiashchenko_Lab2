@@ -112,7 +112,16 @@ function GetNodes(filter_setting, delete_nodes = true) {
       continue;
     }
 
-    str_images += `<div class='node ${i}'><img src='${nodes[i].src}' class='photo'><div class='text-on-photo text'>${nodes[i].description}</div><button class='price text btn-margin font-size-16 bck-button-color hover-pointer' onclick="AddToCart(${i})">${nodes[i].price} UAH</button></div>`;
+    str_images += `<div class='node ${i}'>
+    <img src='${nodes[i].src}' class='photo'>
+    <div class='text-on-photo text'>
+    ${nodes[i].description}
+    </div>
+    <div class="btn-cont font-size-24">
+    <label class='sticky Reem-Kufi margin-left-rigtt-20 main-color'>${nodes[i].price} грн</label>
+    <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart main-color' onclick="AddToCart(${i})"></i>
+    </div>
+    </div>`;
     j++;
   }
 
@@ -250,7 +259,7 @@ if (current_page.includes("index.html")) {
     let str_buttons = "";
 
     for (let i = 0; i < settings_list.length; i++) {
-      str_buttons += `<button class="filter-button text bck-button-color hover-pointer" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</button>`;
+      str_buttons += `<label class="filter-button text hover-pointer underline black-color" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</label>`;
     }
 
     buttons.innerHTML += str_buttons;
