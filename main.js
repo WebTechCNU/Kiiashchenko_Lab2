@@ -25,14 +25,20 @@ function GetNodes(filter_setting, delete_nodes = true) {
     }
 
     alt_rows = parseInt(nodes[i].alt.length / 18);
-    str_images += `<div class='node ${i}' style="height: calc(340px + 25px + ${21 * alt_rows}px)">
-    <p class="text font-size-16 black-color bold padding-left-rigtt-20 margin0 margin-top-15 text-align-left margin-bottom-10">${nodes[i].alt}</p>
+    str_images += `<div class='node ${i}' style="height: calc(340px + 25px + ${
+      21 * alt_rows
+    }px)">
+    <p class="text font-size-16 black-color bold padding-left-rigtt-20 margin0 margin-top-15 text-align-left margin-bottom-10">${
+      nodes[i].alt
+    }</p>
 
       <img src='${nodes[i].src}' class='photo'>
 
       <div class="btn-cont font-size-24 margin-bottom-5">
         <div class="margin-left-rigtt-20">
-          <label class='sticky Reem-Kufi main-color bold'>${nodes[i].price}</label>
+          <label class='sticky Reem-Kufi main-color bold'>${
+            nodes[i].price
+          }</label>
           <label class='sticky Reem-Kufi main-color'>грн</label>
         </div>
         
@@ -51,7 +57,9 @@ function GetNodes(filter_setting, delete_nodes = true) {
   div.innerHTML += str_images + arrow;
 }
 
-{/* <p class="text font-size-16 black-color bold padding-left-rigtt-20 margin0 margin-top-15">${nodes[i].alt}</p> */}
+{
+  /* <p class="text font-size-16 black-color bold padding-left-rigtt-20 margin0 margin-top-15">${nodes[i].alt}</p> */
+}
 
 // ADDTOCART
 let cart = [];

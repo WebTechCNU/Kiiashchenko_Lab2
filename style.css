@@ -19,7 +19,7 @@ body {
     margin: 0;
 }
 
-.bck{
+.bck {
     position: fixed;
     z-index: -1;
     width: 100%;
@@ -259,6 +259,8 @@ body {
 }
 
 .node {
+    transition: cubic-bezier(0.4, 0, 1, 1) 0.2s;
+
     display: inline-block;
     vertical-align: top;
     float: none;
@@ -274,6 +276,8 @@ body {
 
     border-bottom: solid 1px;
     border-color: rgba(71, 71, 71, 0.4);
+
+    background-color: #ffffff;
 }
 
 .node-arrow {
@@ -293,6 +297,8 @@ body {
 
 .node:hover {
     z-index: 10;
+
+    transform: scale(1.1);
 
     box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
 }
@@ -457,4 +463,3 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-

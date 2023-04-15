@@ -24,16 +24,22 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
     }
 
     alt_rows = parseInt(nodes[i].alt.length / 18);
-    str_images += `<div class='node ${i}' style="height: calc(340px + 25px + ${21 * alt_rows}px)">
+    str_images += `<div class='node ${i}' style="height: calc(340px + 25px + ${
+      21 * alt_rows
+    }px)">
 
-    <p class="text font-size-16 black-color bold margin-left-rigtt-20 margin0 margin-top-15 text-align-left margin-bottom-10">${nodes[i].alt}</p>
+    <p class="text font-size-16 black-color bold margin-left-rigtt-20 margin0 margin-top-15 text-align-left margin-bottom-10">${
+      nodes[i].alt
+    }</p>
 
     <img src='${cart[i].src}' class='photo'>
 
     <div class="btn-cont margin-bottom-5">
 
         <div> 
-        <label class='sticky Reem-Kufi margin0 font-size-24 main-color bold'>${cart[i].price}</label>
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color bold'>${
+          cart[i].price
+        }</label>
         <label class='sticky Reem-Kufi margin0 font-size-24 main-color '>грн</label>
         </div>
 
@@ -46,7 +52,9 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
         <label class="sticky hover-pointer main-color bold" onclick="SubAmount(${i})"><img src="down-arrowhead-in-a-circle.png" alt=""></label>
         </div>
 
-        <label class='sticky Reem-Kufi margin0 font-size-24 main-color amount-cont bold'> ${cart[i].amount}</label>
+        <label class='sticky Reem-Kufi margin0 font-size-24 main-color amount-cont bold'> ${
+          cart[i].amount
+        }</label>
 
         </div>
 
