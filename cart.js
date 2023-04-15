@@ -23,9 +23,14 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
       continue;
     }
 
-    str_images += `<div class='node ${i}'><img src='${cart[i].src}' class='photo'>
+    alt_rows = parseInt(nodes[i].alt.length / 18);
+    str_images += `<div class='node ${i}' style="height: calc(340px + 25px + ${21 * alt_rows}px)">
 
-    <div class="btn-cont">
+    <p class="text font-size-16 black-color bold margin-left-rigtt-20 margin0 margin-top-15 text-align-left margin-bottom-10">${nodes[i].alt}</p>
+
+    <img src='${cart[i].src}' class='photo'>
+
+    <div class="btn-cont margin-bottom-5">
 
         <div> 
         <label class='sticky Reem-Kufi margin0 font-size-24 main-color bold'>${cart[i].price}</label>
@@ -48,7 +53,7 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
         
       </div> 
 
-      <div class='text-on-photo margin-top-3 bck-white'>
+      <div class='text-on-photo bck-white' style="margin-top: -2px">
 
         <h class=' text font-size-18 grey-color bold'>Короткі характеристики</h>
         <p class=' text font-size-14 main-color'> ${cart[i].description}</p>
