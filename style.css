@@ -296,7 +296,7 @@ body {
 
 .node:hover .photo {
     opacity: 0.8;
-    filter: blur(1px);
+    filter: blur(0.4px);
 }
 
 .node:hover .text-on-photo {
@@ -319,7 +319,7 @@ body {
 }
 
 .photo:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 .text-on-photo {
