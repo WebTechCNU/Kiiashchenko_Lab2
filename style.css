@@ -12,6 +12,7 @@
 }
 
 * {
+    transition: ease-in 0.5s;
     box-sizing: border-box;
 }
 
