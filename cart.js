@@ -65,13 +65,13 @@ function GetNodesForCart(filter_setting, delete_nodes = true) {
   }
 
   if (sum === 0) {
-    str_images += `<div class="sum-cont sum-cart">
+    str_images += `<div class="sum-cart">
     <div class="border bck-button-color padding-5"> 
     <label class="Reem-Kufi margin0 font-size-30 main-color">Кошик   порожній</label>
     </div>
     </div>`;
   } else {
-    sum_str = `<div class="sum-cont sum-cart">
+    sum_str = `<div class="sum-cart">
     <div class="border bck-button-color padding-5"> 
     
     <label class="Reem-Kufi margin0 font-size-30 main-color">Сума: </label>

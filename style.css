@@ -360,6 +360,17 @@ body {
     text-align: start;
 }
 
+.sum-cart {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+
 /* * MODALS */
 
 
@@ -447,18 +458,3 @@ body {
     cursor: pointer;
 }
 
-.sum-cart {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 20px 0 0 0;
-}
-
-.footer {
-    width: 100%;
-
-    margin: 100px 0 0 0;
-}
