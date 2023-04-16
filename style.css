@@ -289,7 +289,7 @@ body {
 .node:hover {
     z-index: 10;
 
-    transform: scale(1.1);
+    transform: scale(1.05);
 
     box-shadow: 0px 0px 6px rgba(71, 71, 71, 0.4);
 }

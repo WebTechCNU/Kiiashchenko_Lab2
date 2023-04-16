@@ -42,6 +42,14 @@
         <div class="buttons" id="cart-buttons">
             <label class="filter-button text hover-pointer underline black-color"
                 onclick="GetNodesForCart('', true)">All</label>
+            <label class="filter-button text hover-pointer underline black-color"
+                onclick="GetNodesForCart('', true, true)">A-Z</label>
+            <label class="filter-button text hover-pointer underline black-color"
+                onclick="GetNodesForCart('', true, false, true)">Z-A</label>
+            <label class="filter-button text hover-pointer underline black-color"
+                onclick="GetNodesForCart('', true, false, false, true)">min-max</label>
+            <label class="filter-button text hover-pointer underline black-color"
+                onclick="GetNodesForCart('', true, false, false, false, true)">max-min</label>
             <label class="filter-button text hover-pointer underline black-color" onclick="DeleteAllFromCart()"> Delete
                 All</label>
         </div>

@@ -7,6 +7,7 @@ const nodes = [
       "Процесор: Intel Core i5-11400F (2.6–4.4 ГГц), 6 ядер\nМатеринська плата: Asus Prime H510\nВідеокарта: RTX 3060, 12 ГБ\nВнутрішній накопичувач: 500 ГБ (SSD) + 1000 ГБ (HDD)\nВнутрішній накопичувач: Накопичувач PCI-E з підтримкою NVMe\nОперативна память: 16 ГБ, 3200 МГц (DDR4)\nБлок живлення: Chieftec Proton 600 Вт\nСертифікат блока живлення: Bronze",
     price: 23900,
     filter_setting: "Intel",
+    id: 0,
   },
 
   {
@@ -15,6 +16,7 @@ const nodes = [
     description: "AMD",
     price: 43900,
     filter_setting: "AMD",
+    id: 1,
   },
 
   {
@@ -23,6 +25,7 @@ const nodes = [
     description: "Intel",
     price: 22900,
     filter_setting: "Intel",
+    id: 2,
   },
 
   {
@@ -31,6 +34,7 @@ const nodes = [
     description: "AMD",
     price: 15000,
     filter_setting: "AMD",
+    id: 3,
   },
 
   {
@@ -39,6 +43,7 @@ const nodes = [
     description: "AMD",
     price: 13000,
     filter_setting: "AMD",
+    id: 4,
   },
 
   {
@@ -47,6 +52,7 @@ const nodes = [
     description: "Intel",
     price: 25000,
     filter_setting: "Intel",
+    id: 5,
   },
 
   {
@@ -55,6 +61,7 @@ const nodes = [
     description: "AMIntelD",
     price: 33000,
     filter_setting: "Intel",
+    id: 6,
   },
 
   {
@@ -63,6 +70,7 @@ const nodes = [
     description: "AMD",
     price: 34000,
     filter_setting: "AMD",
+    id: 7,
   },
 
   {
@@ -71,6 +79,7 @@ const nodes = [
     description: "AMD",
     price: 21900,
     filter_setting: "AMD",
+    id: 8,
   },
 
   {
@@ -79,6 +88,7 @@ const nodes = [
     description: "Intel",
     price: 20900,
     filter_setting: "Intel",
+    id: 9,
   },
 
   {
@@ -87,6 +97,7 @@ const nodes = [
     description: "Intel",
     price: 30000,
     filter_setting: "Intel",
+    id: 10,
   },
 
   {
@@ -95,5 +106,6 @@ const nodes = [
     description: "Intel",
     price: 56000,
     filter_setting: "Intel",
+    id: 11,
   },
 ];
