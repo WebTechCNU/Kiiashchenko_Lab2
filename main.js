@@ -198,3 +198,13 @@ if (current_page.includes("index.html")) {
 if (current_page.includes("cart.html")) {
   GetNodesForCart("", false);
 }
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  if (document.documentElement.scrollTop > window.innerHeight / 3) {
+    document.getElementById("up-arrow").style.display = "block";
+  } else {
+    document.getElementById("up-arrow").style.display = "none";
+  }
+}
