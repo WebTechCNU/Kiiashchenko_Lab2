@@ -27,6 +27,14 @@ body {
     font-family: "Reem Kufi", sans-serif;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-start {
+    text-align: start;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -144,6 +152,10 @@ body {
     margin-bottom: 5px;
 }
 
+.margin-bottom-7 {
+    margin-bottom: 7px;
+}
+
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
@@ -163,6 +175,10 @@ body {
 
 .padding-left-rigtt-20 {
     padding: 0 20px;
+}
+
+.padding-10{
+    padding: 10px;
 }
 
 .border {
@@ -395,6 +411,27 @@ body {
     position: fixed;
     top: calc(100% - 40px);
     left: calc(100% - 40px);
+}
+
+.news-main{
+    display: inline-block;
+
+    width: 100%;
+    height: auto;
+
+    margin-top: 40px;
+}
+
+.news-title{
+    width: auto;
+    float: left;
+}
+
+.news-node{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* * MODALS */
