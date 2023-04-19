@@ -42,7 +42,7 @@ function GetNodes(filter_setting, delete_nodes = true) {
           <label class='sticky Reem-Kufi main-color'>грн</label>
         </div>
         
-        <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart main-color' onclick="AddToCart(${i})"></i>
+        <i class='fa fa-shopping-basket sticky hover-pointer bck-button-color font-size-21 margin-left-rigtt-20 bck-button-color padding-for-cart nav-color' onclick="AddToCart(${i})"></i>
       </div>
 
       <div class='text-on-photo bck-white margin-top-7'>
@@ -167,37 +167,6 @@ setTimeout(function () {
     }
   };
 }, 5000);
-
-// * START
-let current_page = window.location.href;
-
-if (current_page.includes("index.html")) {
-  GetNodes("", false);
-
-  // * FILTER BUTTONS
-  const settings_list = [];
-  const buttons = document.getElementById("buttons");
-
-  if (buttons != null) {
-    nodes.forEach((item) => {
-      if (!settings_list.includes(item.filter_setting)) {
-        settings_list.push(item.filter_setting);
-      }
-    });
-
-    let str_buttons = "";
-
-    for (let i = 0; i < settings_list.length; i++) {
-      str_buttons += `<label class="filter-button text hover-pointer underline black-color" id="${settings_list[i]}" onclick="GetNodes('${settings_list[i]}')">${settings_list[i]}</label>`;
-    }
-
-    buttons.innerHTML += str_buttons;
-  }
-}
-
-if (current_page.includes("cart.html")) {
-  GetNodesForCart("", false);
-}
 
 window.onscroll = function() {myFunction()};
 

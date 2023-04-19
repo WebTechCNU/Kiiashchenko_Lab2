@@ -1,7 +1,9 @@
 :root {
     --node-height: 340px;
     --node-width: 300px;
-    --main-color: #403C49;
+    --main-color: #4f5250;
+    /* --main-color: #2c2c2c; */
+    --nav-color: #2c2c2c;
     --node-border-color: rgb(182, 27, 0);
     --buttons-color: #a2c617;
     --button-color-on-hover: #d5fc3d;
@@ -83,6 +85,10 @@ body {
     background-color: var(--main-color);
 }
 
+.nav-color-bck {
+    background-color: var(--nav-color);
+}
+
 .bck-delete-color {
     background-color: var(--delete-color);
 }
@@ -106,6 +112,10 @@ body {
 
 .main-color {
     color: var(--main-color);
+}
+
+.nav-color {
+    color: var(--nav-color);
 }
 
 .this-page-color {
