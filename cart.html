@@ -44,19 +44,22 @@
     </div>
 
     <section>
-        <div class="buttons" id="cart-buttons">
-            <label class="filter-button text hover-pointer underline black-color"
-                onclick="GetNodesForCart('', true)">All</label>
-            <label class="filter-button text hover-pointer underline black-color"
-                onclick="GetNodesForCart('', true, true)">A↓</label>
-            <label class="filter-button text hover-pointer underline black-color"
-                onclick="GetNodesForCart('', true, false, true)">Z↑</label>
-            <label class="filter-button text hover-pointer underline black-color"
-                onclick="GetNodesForCart('', true, false, false, true)">min-max</label>
-            <label class="filter-button text hover-pointer underline black-color"
-                onclick="GetNodesForCart('', true, false, false, false, true)">max-min</label>
-            <label class="filter-button text hover-pointer underline black-color" onclick="DeleteAllFromCart()"> Delete
-                All</label>
+        <div class="buttons-parent centre">
+            <div class="buttons" id="cart-buttons">
+                <label class="filter-button text hover-pointer underline black-color"
+                    onclick="GetNodesForCart('', true)">All</label>
+                <label class="filter-button text hover-pointer underline black-color"
+                    onclick="GetNodesForCart('', true, true)">A↓</label>
+                <label class="filter-button text hover-pointer underline black-color"
+                    onclick="GetNodesForCart('', true, false, true)">Z↑</label>
+                <label class="filter-button text hover-pointer underline black-color"
+                    onclick="GetNodesForCart('', true, false, false, true)">min-max</label>
+                <label class="filter-button text hover-pointer underline black-color"
+                    onclick="GetNodesForCart('', true, false, false, false, true)">max-min</label>
+                <label class="filter-button text hover-pointer underline black-color" onclick="DeleteAllFromCart()">
+                    Delete
+                    All</label>
+            </div>
         </div>
 
         <div class="centre">

@@ -131,7 +131,7 @@ setTimeout(function () {
       };
     }
   }, 1000);
-}, 1000000000);
+}, 10000);
 
 // * SUBSCRIBE
 setTimeout(function () {

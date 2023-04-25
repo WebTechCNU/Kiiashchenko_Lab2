@@ -259,12 +259,19 @@ body {
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
 
     margin: 20px 0px 15px;
 }
+
+/* .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    margin: 20px 0px 15px;
+} */
 
 .filter-button {
     margin: 0 20px;
@@ -300,6 +307,14 @@ body {
 
     background-color: #ffffff;
 }
+
+@media (max-width: 500px) {
+    .container {
+        margin-left: calc((100% - var(--node-width)) / 2);
+        margin-right: calc((100% - var(--node-width)) / 2);
+    }
+}
+
 
 .node-arrow {
     opacity: 1;
@@ -452,7 +467,7 @@ body {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10000;
 
     padding-top: 100px;
     left: 0;
