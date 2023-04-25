@@ -20,7 +20,7 @@ function GetNodesForCart(
     sum_str = "";
   let sum = 0;
 
-  if(get_options){
+  if (get_options) {
     a_z_sort = a_z_sort_copy;
     z_a_sort = z_a_sort_copy;
     price_min_sort = price_min_sort_copy;
@@ -96,10 +96,6 @@ function GetNodesForCart(
 
   // * ADD NODES TO html
   for (let i = 0; i < cart.length; i++) {
-    if (!cart_copy[i].filter_setting.includes(global_filter_setting)) {
-      continue;
-    }
-
     alt_rows = parseInt(cart_copy[i].alt.length / 18);
     str_images += `<div class='node ${
       cart_copy[i].id
@@ -188,7 +184,7 @@ function DeleteNodeFromCart(index) {
 
   localStorage.removeItem("cart");
   localStorage.setItem("cart", JSON.stringify(cart));
-  GetNodesForCart('', true, false, false, false, false, true);
+  GetNodesForCart("", true, false, false, false, false, true);
 }
 
 function DeleteAllFromCart() {
@@ -202,7 +198,7 @@ function AddAmount(index) {
   cart[index].amount++;
   localStorage.removeItem("cart");
   localStorage.setItem("cart", JSON.stringify(cart));
-  GetNodesForCart('', true, false, false, false, false, true);
+  GetNodesForCart("", true, false, false, false, false, true);
 }
 
 function SubAmount(index) {
@@ -214,5 +210,5 @@ function SubAmount(index) {
   }
   localStorage.removeItem("cart");
   localStorage.setItem("cart", JSON.stringify(cart));
-  GetNodesForCart('', true, false, false, false, false, true);
+  GetNodesForCart("", true, false, false, false, false, true);
 }

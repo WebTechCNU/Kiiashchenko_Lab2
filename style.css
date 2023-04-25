@@ -289,7 +289,7 @@ body {
 .container {
     width: 960px;
     display: grid;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, calc(var(--node-width) + 20px));
 }
