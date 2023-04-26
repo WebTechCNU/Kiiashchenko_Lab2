@@ -177,8 +177,7 @@ function GetNodesForCart(
   div.innerHTML += str_images;
   sum_cart.innerHTML = sum_str;
 
-  // google.charts.load("current", { packages: ["corechart"] });
-  // drawChart(false);
+  // drawChart();
   
   SaveOptionsOfSort(a_z_sort, z_a_sort, price_min_sort, price_max_sort);
 }
