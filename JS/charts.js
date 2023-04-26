@@ -3,6 +3,13 @@
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
 
+function getWidth() {
+  if (window.innerWidth < 700) {
+    return window.innerWidth;
+  }
+  return 700;
+}
+
 function drawChart() {
   let array = [];
   cart = JSON.parse(localStorage.getItem("cart"));
@@ -14,11 +21,13 @@ function drawChart() {
 
   console.log(array);
 
+  let chart_width = getWidth();
+
   let data = google.visualization.arrayToDataTable(array);
   let options = {
     title: "Ваші покупки",
     fontName: "JetBrains Mono",
-    width: 700,
+    width: Number(chart_width),
     legend: { textStyle: { fontSize: 16 } },
     titleTextStyle: { fontSize: 20 },
   };

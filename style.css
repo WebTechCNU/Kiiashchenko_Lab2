@@ -264,15 +264,6 @@ body {
     margin: 20px 0px 15px;
 }
 
-/* .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-
-    margin: 20px 0px 15px;
-} */
-
 .filter-button {
     margin: 0 20px;
     padding: 2px 7px;
@@ -280,11 +271,6 @@ body {
 
     font-weight: bold;
 }
-
-/* .container {
-    width: 960px;
-    display: table;
-} */
 
 .container {
     width: 960px;
