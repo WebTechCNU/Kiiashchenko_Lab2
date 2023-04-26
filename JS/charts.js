@@ -2,6 +2,7 @@
 
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
+window.addEventListener("resize", drawChart);
 
 function getWidth() {
   if (window.innerWidth < 700) {
@@ -10,7 +11,7 @@ function getWidth() {
   return 700;
 }
 
-function drawChart() {
+function drawChart(is_new = true) {
   let array = [];
   cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -23,7 +24,7 @@ function drawChart() {
 
   let chart_width = getWidth();
 
-  let data = google.visualization.arrayToDataTable(array);
+  let data = new google.visualization.arrayToDataTable(array);
   let options = {
     title: "Ваші покупки",
     fontName: "JetBrains Mono",
@@ -32,8 +33,15 @@ function drawChart() {
     titleTextStyle: { fontSize: 20 },
   };
   // * OR PieChart
-  let chart = new google.visualization.BarChart(
-    document.getElementById("myChart")
-  );
+  let chart;
+  if (is_new) {
+    chart = new google.visualization.BarChart(
+      document.getElementById("myChart")
+    );
+  } else {
+    chart = google.visualization.BarChart(
+      document.getElementById("myChart")
+    );
+  }
   chart.draw(data, options);
 }

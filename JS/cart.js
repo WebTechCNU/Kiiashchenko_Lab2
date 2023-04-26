@@ -5,6 +5,9 @@ function SaveOptionsOfSort(a_z_sort, z_a_sort, price_min_sort, price_max_sort) {
   price_max_sort_copy = price_max_sort;
 }
 
+const cart_cont = document.getElementById("images-container");
+cart_cont.addEventListener('click', drawChart);
+
 function GetNodesForCart(
   filter_setting,
   delete_nodes = true,
@@ -30,7 +33,7 @@ function GetNodesForCart(
   // * GET CART FROM LOCAL STORAGE
   if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
-    console.log(cart);
+    // console.log(cart);
   } else {
     cart = [];
   }
@@ -174,6 +177,9 @@ function GetNodesForCart(
   div.innerHTML += str_images;
   sum_cart.innerHTML = sum_str;
 
+  // google.charts.load("current", { packages: ["corechart"] });
+  // drawChart(false);
+  
   SaveOptionsOfSort(a_z_sort, z_a_sort, price_min_sort, price_max_sort);
 }
 
