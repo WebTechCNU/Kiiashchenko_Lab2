@@ -232,17 +232,29 @@ body {
     align-items: center;
 }
 
+.centre-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
 .hover-pointer {}
 
 .hover-pointer:hover {
     cursor: pointer;
 }
 
+.login-signin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .nav {
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    align-items: center;
     height: 60px;
 }
 
@@ -301,15 +313,6 @@ body {
 
     background-color: #ffffff;
 }
-/* 
-@media (max-width: 959px) {
-    .container {
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fit, calc(var(--node-width) + 20px));
-    }
-} */
 
 .node-arrow {
     opacity: 1;
