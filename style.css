@@ -457,6 +457,10 @@ body {
     flex-direction: column;
 }
 
+.login-input{
+    margin: 5px 0;
+}
+
 /* * MODALS */
 
 
