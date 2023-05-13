@@ -461,6 +461,13 @@ body {
     margin: 5px 0;
 }
 
+.signin-btn{
+    padding: 2px 7px;
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
 /* * MODALS */
 
 
