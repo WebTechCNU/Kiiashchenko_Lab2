@@ -1,4 +1,3 @@
-// * NODES
 let filter_setting = "",
   i = 0;
 let global_filter_setting = "";
@@ -9,6 +8,7 @@ function GetNodes(filter_setting, delete_nodes = true) {
   let div = document.getElementById("images-container");
   let arrow_DOM = document.getElementById("arrow");
   let str_images = "";
+
 
   if (delete_nodes) {
     div.innerHTML = "";
@@ -25,9 +25,9 @@ function GetNodes(filter_setting, delete_nodes = true) {
     }
 
     alt_rows = parseInt(nodes[i].alt.length / 18);
-    str_images += `<div class='node ${nodes[i].id}' style="height: calc(340px + 25px + ${
-      21 * alt_rows
-    }px)">
+    str_images += `<div class='node ${
+      nodes[i].id
+    }' style="height: calc(340px + 25px + ${21 * alt_rows}px)">
     <p class="text font-size-16 black-color bold padding-left-rigtt-20 margin0 margin-top-15 text-align-left margin-bottom-10">${
       nodes[i].alt
     }</p>
@@ -168,7 +168,9 @@ setTimeout(function () {
   };
 }, 5000);
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function () {
+  myFunction();
+};
 
 function myFunction() {
   if (document.documentElement.scrollTop > window.innerHeight / 3) {

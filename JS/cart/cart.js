@@ -128,10 +128,10 @@ function GetNodesForCart(
         <div class="up-down-arrows sticky">
         <label class="sticky hover-pointer main-color bold" onclick="AddAmount(${
           cart_copy[i].id
-        })"><img src="up-arrowhead-in-a-circle.png" alt=""></label>
+        })"><img src="images/cart/up-arrowhead-in-a-circle.png" alt=""></label>
         <label class="sticky hover-pointer main-color bold" onclick="SubAmount(${
           cart_copy[i].id
-        })"><img src="down-arrowhead-in-a-circle.png" alt=""></label>
+        })"><img src="images/cart/down-arrowhead-in-a-circle.png" alt=""></label>
         </div>
 
         <label class='sticky Reem-Kufi margin0 font-size-24 main-color amount-cont bold'> ${
